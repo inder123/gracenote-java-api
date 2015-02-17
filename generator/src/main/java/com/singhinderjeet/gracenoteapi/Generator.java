@@ -36,6 +36,8 @@ public class Generator {
     generator.processJson("/lineups-by-postal-code1.json", "Lineup");
     generator.processJson("/lineups-by-postal-code2.json", "Lineup");
     generator.processJson("/lineup-channels.json", "ChannelDetails");
+    generator.processJson("/lineup-airings-basic-size.json", "LineupAirings");
+    generator.processJson("/lineup-airings-detailed-size.json", "LineupAirings");
     generator.applyCustomMappings();
     generator.generateClasses();
   }
@@ -69,6 +71,35 @@ public class Generator {
       .mapType("Width", "int")
       .mapType("Primary", "boolean")
       .mapType("Category", "String")
+      .mapType("Text", "String")
+      .mapType("Tier", "String")
+      // LineupAirings
+      .mapType("Airings", "Airing")
+      .mapType("Qualifiers", "String")
+      .mapType("Channels", "String")
+      .mapType("StartTime", "Date")
+      .mapType("EndTime", "Date")
+      .mapType("Duration", "Date")
+      .mapType("Ratings", "Rating")
+      // Airing - Rating
+      .mapType("Body", "String")
+      .mapType("Code", "String")
+      // Program
+      .mapType("TmsId", "String")
+      .mapType("RootId", "String")
+      .mapType("SeriesId", "String")
+      .mapType("SubType", "String")
+      .mapType("Title", "String")
+      .mapType("ReleaseYear", "String")
+      .mapType("ReleaseDate", "Date")
+      .mapType("OrigAirDate", "Date")
+      .mapType("TitleLang", "String")
+      .mapType("DescriptionLang", "String")
+      .mapType("EntityType", "String")
+      .mapType("Genres", "String")
+      .mapType("ShortDescription", "String")
+      .mapType("LongDescription", "String")
+      .mapType("TopCast", "String")
       ;
     converter.transform(mappings);
     mappings = new CustomMappings()
