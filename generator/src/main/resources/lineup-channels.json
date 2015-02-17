@@ -1,0 +1,44 @@
+[
+    {
+        "channel": "002",
+        "callSign": "WCBS",
+        "stationId": "11331",
+        "affiliateId": "10098",
+        "affiliateCallSign": "CBS",
+        "preferredImage": {
+            "uri": "h3/NowShowing/10098/s10098_h3_aa.png",
+            "height": "270",
+            "width": "360",
+            "primary": "true",
+            "category": "Logo"
+        }
+    },
+    {
+        "channel": "003",
+        "callSign": "WPXN",
+        "stationId": "11743",
+        "affiliateId": "18633",
+        "affiliateCallSign": "ION",
+        "preferredImage": {
+            "uri": "h3/NowShowing/18633/s18633_h3_aa.png",
+            "height": "270",
+            "width": "360",
+            "primary": "true",
+            "category": "Logo"
+        }
+    },
+    {
+        "channel": "004",
+        "callSign": "WNBC",
+        "stationId": "11705",
+        "affiliateId": "10991",
+        "affiliateCallSign": "NBC",
+        "preferredImage": {
+            "uri": "h3/NowShowing/10991/s10991_h3_aa.png",
+            "height": "270",
+            "width": "360",
+            "primary": "true",
+            "category": "Logo"
+        }
+    }
+]

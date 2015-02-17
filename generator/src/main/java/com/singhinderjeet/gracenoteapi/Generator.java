@@ -35,6 +35,7 @@ public class Generator {
     generator.processJson("/lineup-details.json", "LineupDetails");
     generator.processJson("/lineups-by-postal-code1.json", "Lineup");
     generator.processJson("/lineups-by-postal-code2.json", "Lineup");
+    generator.processJson("/lineup-channels.json", "ChannelDetails");
     generator.applyCustomMappings();
     generator.generateClasses();
   }
@@ -54,7 +55,24 @@ public class Generator {
       .mapType("Name", "String")
       .mapType("Type", "String")
       .mapType("Device", "String")
-      .mapType("Location", "String");
+      .mapType("Location", "String")
+      // channel
+      .mapType("CallSign", "String")
+      .mapType("Channel", "String")
+      .mapType("StationId", "String")
+      .mapType("AffiliateId", "String")
+      .mapType("AffiliateCallSign", "String")
+      .mapType("PreferredImage", "Image")
+      // Image details
+      .mapType("Uri", "String")
+      .mapType("Height", "int")
+      .mapType("Width", "int")
+      .mapType("Primary", "boolean")
+      .mapType("Category", "String")
+      ;
+    converter.transform(mappings);
+    mappings = new CustomMappings()
+      .mapType("ChannelDetails", "Channel"); // Rename ChannelDetails to Channel
     converter.transform(mappings);
   }
 
