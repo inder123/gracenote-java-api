@@ -1,0 +1,8 @@
+{
+  "type": "CABLE",
+  "lineupId": "USA-NC32461-X",
+  "name": "Time Warner Cable - Digital",
+  "device": "X",
+  "location": "Durham",
+  "mso": { "id": "08670", "name": "Time Warner Cable" }
+}

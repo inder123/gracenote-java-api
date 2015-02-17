@@ -1,0 +1,29 @@
+[
+  {
+    "type":"OTA",
+    "lineupId":"GBR-OTAOX1",
+    "name":"Local"
+  },
+  {
+    "type":"CABLE",
+    "device":"X",
+    "lineupId":"GBR-0000066-X",
+    "name":"Virgin Media Oxford Digital",
+    "location":"Oxford",
+    "mso":{
+      "id":"0000101",
+      "name":"Virgin Media"
+    }
+  },
+  {
+    "type":"CABLE",
+    "device":"DEFAULT",
+    "lineupId":"GBR-0001207-DEFAULT",
+    "name":"Freeview - Central (South) - Cable",
+    "location":"London",
+    "mso":{
+      "id":"0000100",
+      "name":"Freeview"
+    }
+  }
+]
