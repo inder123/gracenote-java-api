@@ -63,6 +63,13 @@ public class Generator {
       .mapType("AffiliateCallSign", "String")
       .mapType("PreferredImage", "Image");
     generator.processJson("/lineup-channels.json", "Channel", channelMappings);
+    CustomMappings stationMappings = new CustomMappings()
+      .addMappings(channelMappings)
+      .mapType("Name", "String")
+      .mapToArrayType("BcastLangs", "String")
+      .mapToArrayType("EdLangs", "String")
+      .mapType("Type", "String");
+    generator.processJson("/station-details.json", "Station", stationMappings);
 
     CustomMappings ratingMappings = new CustomMappings()
       .mapType("Body", "String")

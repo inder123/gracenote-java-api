@@ -1,0 +1,33 @@
+[
+  {
+    "stationId":"11474",
+    "callSign":"WGN",
+    "affiliateCallSign":"CW",
+    "affiliateId":"51306",
+    "name":"WGN (CW Chicago)",
+    "channel":"009",
+    "bcastLangs":["en"],
+    "edLangs":["en"],
+    "type":"Full Power Broadcast",
+    "preferredImage":{
+      "width":"360", "height":"270",
+      "uri":"h3/NowShowing/51306/s51306_h3_aa.png",
+      "category":"Logo",
+      "primary":"true"
+    }
+  },
+  {
+    "stationId":"10161",
+    "callSign":"CSPAN",
+    "name":"CSPAN",
+    "bcastLangs":["en"],
+    "edLangs":["en"],
+    "type":"Satellite",
+    "preferredImage":{
+      "width":"360", "height":"270",
+      "uri":"h3/NowShowing/10161/s10161_h3_aa.png",
+      "category":"Logo",
+      "primary":"true"
+    }
+  }
+]
