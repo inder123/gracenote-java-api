@@ -32,6 +32,13 @@ import com.google.gson.stream.JsonWriter;
 
 final class UtcDateTypeAdapter extends TypeAdapter<Date> {
   private final TimeZone UTC_TIME_ZONE = TimeZone.getTimeZone("UTC");
+  private final ThreadLocal<SimpleDateFormat> dateFormat = new ThreadLocal<SimpleDateFormat>() {
+    // SimpleDateFormat is not thread-safe, so give one to each thread
+    // We give one to each instance, but Gson should only have one instance of type adapter anyway
+      @Override protected SimpleDateFormat initialValue() {
+        return new SimpleDateFormat("yyyy-mm-dd");
+      }
+  };
 
   @Override
   public void write(JsonWriter out, Date date) throws IOException {
@@ -60,9 +67,8 @@ final class UtcDateTypeAdapter extends TypeAdapter<Date> {
         try {
           return new Date(date);
         } catch (IllegalArgumentException iae) {
-          SimpleDateFormat format = new SimpleDateFormat("yyyy-mm-dd");
           try {
-            return format.parse(date);
+            return dateFormat.get().parse(date);
           } catch (ParseException pe) {
             throw new JsonParseException(pe);
           }
