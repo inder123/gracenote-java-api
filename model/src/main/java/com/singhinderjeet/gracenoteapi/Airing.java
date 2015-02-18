@@ -7,14 +7,14 @@ public class Airing {
 
     private final Date startTime;
     private final Date endTime;
-    private final Date duration;
+    private final int duration;
     private final List<String> qualifiers;
     private final String stationId;
     private final Program program;
     private final List<String> channels;
     private final List<Rating> ratings;
 
-    public Airing(Date startTime, Date endTime, Date duration, List<String> qualifiers, String stationId, Program program, List<String> channels, List<Rating> ratings) {
+    public Airing(Date startTime, Date endTime, int duration, List<String> qualifiers, String stationId, Program program, List<String> channels, List<Rating> ratings) {
         this.startTime = startTime;
         this.endTime = endTime;
         this.duration = duration;
@@ -33,7 +33,7 @@ public class Airing {
         return endTime;
     }
 
-    public Date getDuration() {
+    public int getDuration() {
         return duration;
     }
 

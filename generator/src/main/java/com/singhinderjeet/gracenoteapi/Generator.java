@@ -32,59 +32,43 @@ public class Generator {
 
   public static void main(String[] args) throws Exception {
     Generator generator = new Generator();
-    generator.processJson("/lineup-details.json", "LineupDetails");
-    generator.processJson("/lineups-by-postal-code1.json", "Lineup");
-    generator.processJson("/lineups-by-postal-code2.json", "Lineup");
-    generator.processJson("/lineup-channels.json", "ChannelDetails");
-    generator.processJson("/lineup-airings-basic-size.json", "LineupAirings");
-    generator.processJson("/lineup-airings-detailed-size.json", "LineupAirings");
-    generator.applyCustomMappings();
-    generator.generateClasses();
-  }
-
-  private final Json2Java converter = new Json2Java();
-
-  private void processJson(String file, String rootClass) throws Exception {
-    InputStream json = Generator.class.getResourceAsStream(file);
-    InputStreamReader reader = new InputStreamReader(json, "UTF-8");
-    converter.processJson(reader, "com.singhinderjeet.gracenoteapi", rootClass);
-  }
-
-  private void applyCustomMappings() {
-    CustomMappings mappings = new CustomMappings()
-      .mapType("LineupId", "String")
-      .mapType("Id", "String")
-      .mapType("Name", "String")
+    CustomMappings msoMappings = new CustomMappings()
+      .mapType("Id", "String");
+    CustomMappings lineupMappings = new CustomMappings()
       .mapType("Type", "String")
+      .mapType("LineupId", "String")
+      .mapType("Name", "String")
       .mapType("Device", "String")
       .mapType("Location", "String")
-      // channel
-      .mapType("CallSign", "String")
-      .mapType("Channel", "String")
-      .mapType("StationId", "String")
-      .mapType("AffiliateId", "String")
-      .mapType("AffiliateCallSign", "String")
-      .mapType("PreferredImage", "Image")
-      // Image details
+      .addMappings(msoMappings);
+
+    generator.processJson("/lineup-details.json", "LineupDetails", lineupMappings);
+    generator.processJson("/lineups-by-postal-code1.json", "LineupDetails", lineupMappings);
+    generator.processJson("/lineups-by-postal-code2.json", "LineupDetails", lineupMappings);
+
+    CustomMappings imageMappings = new CustomMappings()
       .mapType("Uri", "String")
       .mapType("Height", "int")
       .mapType("Width", "int")
       .mapType("Primary", "boolean")
       .mapType("Category", "String")
       .mapType("Text", "String")
-      .mapType("Tier", "String")
-      // LineupAirings
-      .mapType("Airings", "Airing")
-      .mapType("Qualifiers", "String")
-      .mapType("Channels", "String")
-      .mapType("StartTime", "Date")
-      .mapType("EndTime", "Date")
-      .mapType("Duration", "Date")
-      .mapType("Ratings", "Rating")
-      // Airing - Rating
+      .mapType("Tier", "String");
+    CustomMappings channelMappings = new CustomMappings()
+      .addMappings(imageMappings)
+      .mapType("CallSign", "String")
+      .mapType("Channel", "String")
+      .mapType("StationId", "String")
+      .mapType("AffiliateId", "String")
+      .mapType("AffiliateCallSign", "String")
+      .mapType("PreferredImage", "Image");
+    generator.processJson("/lineup-channels.json", "Channel", channelMappings);
+
+    CustomMappings ratingMappings = new CustomMappings()
       .mapType("Body", "String")
-      .mapType("Code", "String")
-      // Program
+      .mapType("Code", "String");
+
+    CustomMappings programMappings = new CustomMappings()
       .mapType("TmsId", "String")
       .mapType("RootId", "String")
       .mapType("SeriesId", "String")
@@ -100,11 +84,39 @@ public class Generator {
       .mapType("ShortDescription", "String")
       .mapType("LongDescription", "String")
       .mapType("TopCast", "String")
-      ;
-    converter.transform(mappings);
-    mappings = new CustomMappings()
-      .mapType("ChannelDetails", "Channel"); // Rename ChannelDetails to Channel
-    converter.transform(mappings);
+      .mapType("PreferredImage", "Image")
+      .addMappings(ratingMappings);
+
+    CustomMappings airingMappings = new CustomMappings()
+      .mapType("StartTime", "Date")
+      .mapType("EndTime", "Date")
+      .mapType("Duration", "int")
+      .mapType("Qualifiers", "String") // TODO: should be array of strings
+      .mapType("StationId", "String")
+      .mapType("Channels", "String") // TODO: should be array of strings
+      .mapType("Ratings", "Rating")
+      .addMappings(programMappings);
+
+    CustomMappings airingsMappings = new CustomMappings()
+      .mapType("StationId", "String")
+      .mapType("CallSign", "String")
+      .mapType("Channel", "String")
+      .addMappings(imageMappings)
+      .mapType("Airings", "Airing")
+      .addMappings(airingMappings)
+      .addMappings(programMappings);
+    generator.processJson("/lineup-airings-basic-size.json", "LineupAirings", airingsMappings);
+    generator.processJson("/lineup-airings-detailed-size.json", "LineupAirings", airingsMappings);
+    //generator.applyCustomMappings();
+    generator.generateClasses();
+  }
+
+  private final Json2Java converter = new Json2Java();
+
+  private void processJson(String file, String rootClass, CustomMappings mappings) throws Exception {
+    InputStream json = Generator.class.getResourceAsStream(file);
+    InputStreamReader reader = new InputStreamReader(json, "UTF-8");
+    converter.processJson(reader, "com.singhinderjeet.gracenoteapi", rootClass, mappings);
   }
 
   private void generateClasses() throws Exception {
