@@ -1,0 +1,96 @@
+[
+  {
+    "stationId":"16715",
+    "callSign":"POPSD",
+    "channel":"000",
+    "preferredImage":{
+      "width":"360",
+      "height":"270",
+      "uri":"h3/NowShowing/16715/s16715_h3_aa.png",
+      "category":"Logo",
+      "primary":"true"
+    },
+    "airings":[
+      {
+        "startTime":"2015-02-14T00:00Z",
+        "endTime":"2015-02-14T01:00Z",
+        "duration":60,
+        "qualifiers":["Stereo","CC"],
+        "channels":["000"],
+        "stationId":"16715",
+        "ratings":[
+          {
+            "body":"USA Parental Rating",
+            "code":"TV14"
+          }
+        ],
+        "program":{
+          "tmsId":"EP000044223045",
+          "rootId":"11472718",
+          "seriesId":"183904",
+          "subType":"Series",
+          "title":"The Young and the Restless",
+          "releaseYear":2015,
+          "releaseDate":"2015",
+          "origAirDate":"2015-02-13",
+          "titleLang":"en",
+          "descriptionLang":"en",
+          "entityType":"Episode",
+          "genres":["Soap"],
+          "shortDescription":"Drama revolves around three families in Genoa City.",
+          "longDescription":"Drama revolves around three families in Genoa City.",
+          "topCast":["Eric Braeden", "Melody Thomas Scott", "Peter Bergman"],
+          "preferredImage":{
+            "width":"240",
+            "height":"360",
+            "uri":"assets/p183904_b_v5_aa.jpg",
+            "category":"Banner-L1",
+            "text":"yes",
+            "primary":"true",
+            "tier":"Series"
+          }
+        }
+      },
+      {
+        "startTime":"2015-02-14T01:00Z",
+        "endTime":"2015-02-14T05:00Z",
+        "duration":240,
+        "qualifiers":["Stereo","CC","Tape"],
+        "channels":["000"],
+        "stationId":"16715",
+        "ratings":[
+          {
+            "body":"FCC-TVPG (USA)",
+            "code":"TVPG"
+          }
+        ],
+        "program":{
+          "tmsId":"SH017388940000",
+          "rootId":"9973659",
+          "seriesId":"9973659",
+          "subType":"Special",
+          "title":"The 57th Annual Grammy Awards",
+          "releaseYear":2015,
+          "releaseDate":"2015-02-08",
+          "origAirDate":"2015-02-08",
+          "titleLang":"en",
+          "descriptionLang":"en",
+          "entityType":"Show",
+          "genres":["Music","Awards","Special"],
+          "longDescription":"For the 57th year, the Recording Academy honors musical acts for their achievements in the industry. The ceremony, broadcast from the Staples Center in Los Angeles, will be hosted by entertainment icon LL Cool J. Scheduled performances include some of the industry's top artists: Eric Church, Ariana Grande, Ed Sheeran and Madonna. Beyoncé, Sam Smith and Pharrell Williams lead all artists with six nominations each, with all three in the running for Album of the Year -- considered the most-prestigious award at the ceremony -- along with Beck and Ed Sheeran.",
+          "shortDescription":"LL Cool J hosts festivities in Los Angeles honoring excellence in the recording industry.",
+          "topCast":["LL Cool J","Eric Church","Ariana Grande"],
+          "directors":["Louis J. Horvitz"],
+          "preferredImage":{
+            "width":"240",
+            "height":"360",
+            "uri":"assets/p9973659_b_v5_aa.jpg",
+            "category":"Banner-LO",
+            "text":"yes",
+            "primary":"true"
+          }
+        }
+      }
+    ]
+  }
+]

@@ -1,0 +1,78 @@
+[
+  {
+    "stationId":"10142",
+    "callSign":"CNN",
+    "preferredImage":{
+      "width":"360",
+      "height":"270",
+      "uri":"h3/NowShowing/10142/s10142_h3_aa.png",
+      "category":"Logo",
+      "primary":"true"
+    },
+    "airings":[
+      {
+        "startTime":"2015-02-14T00:00Z",
+        "endTime":"2015-02-14T01:00Z",
+        "duration":60,
+        "qualifiers":["New"],
+        "stationId":"10142",
+        "program":{
+          "tmsId":"SH014781490000",
+          "rootId":"8855245",
+          "seriesId":"8855245",
+          "subType":"Series",
+          "title":"Erin Burnett OutFront",
+          "releaseYear":2011,
+          "releaseDate":"2011-10-04",
+          "origAirDate":"2011-10-03",
+          "titleLang":"en",
+          "descriptionLang":"en",
+          "entityType":"Show",
+          "genres":["News"],
+          "shortDescription":"News and current events."
+        }
+      },
+      {
+        "startTime":"2015-02-14T01:00Z",
+        "endTime":"2015-02-14T02:00Z",
+        "duration":60,
+        "qualifiers":["New","CC"],
+        "stationId":"10142",
+        "program":{
+          "tmsId":"SH006062990000",
+          "rootId":"185440",
+          "seriesId":"185440",
+          "subType":"Series",
+          "title":"Anderson Cooper 360",
+          "releaseYear":2003,
+          "releaseDate":"2003",
+          "origAirDate":"2003-09-08",
+          "titleLang":"en",
+          "descriptionLang":"en",
+          "entityType":"Show",
+          "genres":["Talk","Newsmagazine"],
+          "shortDescription":"Anchor Anderson Cooper reports in New York."
+        }
+      },
+      {
+        "startTime":"2015-02-14T02:00Z",
+        "endTime":"2015-02-14T03:00Z",
+        "duration":60,
+        "stationId":"10142",
+        "program":{
+          "tmsId":"SH003118650000",
+          "rootId":"606820",
+          "seriesId":"606820",
+          "subType":"Series",
+          "title":"CNN Special Report",
+          "releaseYear":1999,
+          "releaseDate":"1999",
+          "origAirDate":"1999-04-22",
+          "titleLang":"en",
+          "entityType":"Show",
+          "genres":["News"]
+        }
+      }
+    ]
+  }
+]

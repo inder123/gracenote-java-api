@@ -11,7 +11,7 @@ public class Program {
     private final String subType;
     private final String title;
     private final String releaseYear;
-    private final Date releaseDate;
+    private final String releaseDate;
     private final Date origAirDate;
     private final String titleLang;
     private final String descriptionLang;
@@ -23,7 +23,7 @@ public class Program {
     private final Image preferredImage;
     private final List<String> directors;
 
-    public Program(String tmsId, String rootId, String seriesId, String subType, String title, String releaseYear, Date releaseDate, Date origAirDate, String titleLang, String descriptionLang, String entityType, List<String> genres, String shortDescription, String longDescription, List<String> topCast, Image preferredImage, List<String> directors) {
+    public Program(String tmsId, String rootId, String seriesId, String subType, String title, String releaseYear, String releaseDate, Date origAirDate, String titleLang, String descriptionLang, String entityType, List<String> genres, String shortDescription, String longDescription, List<String> topCast, Image preferredImage, List<String> directors) {
         this.tmsId = tmsId;
         this.rootId = rootId;
         this.seriesId = seriesId;
@@ -67,7 +67,7 @@ public class Program {
         return releaseYear;
     }
 
-    public Date getReleaseDate() {
+    public String getReleaseDate() {
         return releaseDate;
     }
 

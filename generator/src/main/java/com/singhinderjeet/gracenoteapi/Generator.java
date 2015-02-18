@@ -75,7 +75,7 @@ public class Generator {
       .mapType("SubType", "String")
       .mapType("Title", "String")
       .mapType("ReleaseYear", "String")
-      .mapType("ReleaseDate", "Date")
+      .mapType("ReleaseDate", "String")
       .mapType("OrigAirDate", "Date")
       .mapType("TitleLang", "String")
       .mapType("DescriptionLang", "String")

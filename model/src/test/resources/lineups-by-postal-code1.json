@@ -1,0 +1,58 @@
+[
+  {
+    "lineupId": "USA-OTA27713", 
+    "name": "Local Over the Air Broadcast", 
+    "type": "OTA"
+  }, 
+  {
+    "device": "X", 
+    "lineupId": "USA-NC67566-X", 
+    "location": "Cary", 
+    "mso": {
+      "id": "17304", 
+      "name": "AT&T U-verse TV"
+    }, 
+    "name": "AT&T U-verse TV Digital", 
+    "type": "CABLE"
+  }, 
+  {
+    "device": "DEFAULT", 
+    "lineupId": "USA-NC66712-DEFAULT", 
+    "location": "Durham", 
+    "name": "Campus Crossing Durham - Cable", 
+    "type": "CABLE"
+  }, 
+  {
+    "device": "DEFAULT", 
+    "lineupId": "USA-DITV560-DEFAULT", 
+    "location": "Raleigh", 
+    "mso": {
+      "id": "17580", 
+      "name": "DIRECTV"
+    }, 
+    "name": "DIRECTV Raleigh - Satellite", 
+    "type": "SATELLITE"
+  }, 
+  {
+    "device": "DEFAULT", 
+    "lineupId": "USA-NC32461-DEFAULT", 
+    "location": "Durham", 
+    "mso": {
+      "id": "08670", 
+      "name": "Time Warner Cable"
+    }, 
+    "name": "Time Warner Cable - Cable", 
+    "type": "CABLE"
+  }, 
+  {
+    "device": "DEFAULT", 
+    "lineupId": "USA-DITV-DEFAULT", 
+    "location": "USA", 
+    "mso": {
+      "id": "17580", 
+      "name": "DIRECTV"
+    }, 
+    "name": "DIRECTV - Satellite", 
+    "type": "SATELLITE"
+  }
+]
