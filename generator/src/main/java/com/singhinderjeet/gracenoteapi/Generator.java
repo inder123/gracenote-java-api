@@ -80,10 +80,11 @@ public class Generator {
       .mapType("TitleLang", "String")
       .mapType("DescriptionLang", "String")
       .mapType("EntityType", "String")
-      .mapType("Genres", "String")
+      .mapToArrayType("Genres", "String")
       .mapType("ShortDescription", "String")
       .mapType("LongDescription", "String")
-      .mapType("TopCast", "String")
+      .mapToArrayType("TopCast", "String")
+      .mapToArrayType("Directors", "String")
       .mapType("PreferredImage", "Image")
       .addMappings(ratingMappings);
 
@@ -91,10 +92,10 @@ public class Generator {
       .mapType("StartTime", "Date")
       .mapType("EndTime", "Date")
       .mapType("Duration", "int")
-      .mapType("Qualifiers", "String") // TODO: should be array of strings
+      .mapToArrayType("Qualifiers", "String")
       .mapType("StationId", "String")
-      .mapType("Channels", "String") // TODO: should be array of strings
-      .mapType("Ratings", "Rating")
+      .mapToArrayType("Channels", "String")
+      .mapToArrayType("Ratings", "Rating")
       .addMappings(programMappings);
 
     CustomMappings airingsMappings = new CustomMappings()
@@ -102,7 +103,7 @@ public class Generator {
       .mapType("CallSign", "String")
       .mapType("Channel", "String")
       .addMappings(imageMappings)
-      .mapType("Airings", "Airing")
+      .mapToArrayType("Airings", "Airing")
       .addMappings(airingMappings)
       .addMappings(programMappings);
     generator.processJson("/lineup-airings-basic-size.json", "LineupAirings", airingsMappings);
