@@ -1,0 +1,42 @@
+[
+  {
+    "startTime":"2015-02-19T23:00Z",
+    "endTime":"2015-02-20T01:00Z",
+    "duration":120,
+    "qualifiers":["Stereo"],
+    "program":{
+      "tmsId":"SH018079070000",
+      "rootId":"10261471",
+      "seriesId":"10261471",
+      "subType":"Special",
+      "title":"Key Capitol Hill Hearings",
+      "releaseYear":2013,
+      "releaseDate":"2013",
+      "origAirDate":"2013-09-24",
+      "titleLang":"en",
+      "descriptionLang":"en",
+      "entityType":"Show",
+      "genres":[ "Special", "Politics"],
+      "longDescription":"Speeches from policy makers and coverage from around the country.",
+      "shortDescription":"Speeches from policy makers and coverage from around the country.",
+      "preferredImage":{
+        "width":"240",
+        "height":"360",
+        "uri":"assets/p10261471_b_v5_aa.jpg",
+        "category":"Banner-L3",
+        "text":"yes",
+        "primary":"true"
+      }
+    },
+    "station":{
+      "stationId":"10161",
+      "callSign":"CSPAN",
+      "preferredImage":{
+        "width":"360",
+        "height":"270",
+        "uri":"h3/NowShowing/10161/s10161_h3_aa.png",
+        "category":"Logo", "primary":"true"
+      }
+    }
+  }
+]

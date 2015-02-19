@@ -115,7 +115,12 @@ public class Generator {
       .addMappings(programMappings);
     generator.processJson("/lineup-airings-basic-size.json", "LineupAirings", airingsMappings);
     generator.processJson("/lineup-airings-detailed-size.json", "LineupAirings", airingsMappings);
-    //generator.applyCustomMappings();
+
+    CustomMappings stationAiringsMappings = new CustomMappings()
+      .addMappings(airingMappings)
+      .addMappings(stationMappings);
+    generator.processJson("/station-airings.json", "StationAiring", stationAiringsMappings);
+
     generator.generateClasses();
   }
 
