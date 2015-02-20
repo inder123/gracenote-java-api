@@ -46,6 +46,9 @@ public class Generator {
     generator.processJson("/lineups-by-postal-code1.json", "LineupDetails", lineupMappings);
     generator.processJson("/lineups-by-postal-code2.json", "LineupDetails", lineupMappings);
 
+    CustomMappings commonMappings = new CustomMappings()
+      .mapType("RootId", "String");
+
     CustomMappings imageMappings = new CustomMappings()
       .mapType("Uri", "String")
       .mapType("Height", "int")
@@ -79,13 +82,13 @@ public class Generator {
       .mapType("PersonId", "String")
       .mapType("NameId", "String")
       .mapType("Name", "String")
-      .mapType("RootId", "String")
       .mapType("Title", "String")
       .mapType("Role", "String")
       .mapType("BillingOrder", "String")
       .mapType("CharacterName", "String")
       .mapType("Year", "String")
-      .mapType("Type", "String");
+      .mapType("Type", "String")
+      .addMappings(commonMappings);
     generator.processJson("/credits.json", "Credit", creditMappings);
 
     CustomMappings recommendationMappings = new CustomMappings()
@@ -94,6 +97,7 @@ public class Generator {
       .mapType("Title", "String");
 
     CustomMappings awardMappings = new CustomMappings()
+      .addMappings(commonMappings)
       .mapType("AwardId", "String")
       .mapType("Recipient", "String")
       .mapType("Name", "String")
@@ -103,6 +107,7 @@ public class Generator {
       .mapType("Won", "boolean")
       .mapType("Category", "String")
       .mapType("AwardCatId", "String");
+    generator.processJson("/awards.json", "Award", awardMappings);
 
     CustomMappings keywordMappings = new CustomMappings()
       .mapToArrayType("Mood", "String")

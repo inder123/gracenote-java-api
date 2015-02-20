@@ -3,45 +3,39 @@ package com.singhinderjeet.gracenoteapi;
 public class Award {
 
     private final String awardId;
+    private final String rootId;
     private final String name;
-    private final String awardName;
-    private final boolean won;
-    private final String year;
     private final String category;
     private final String awardCatId;
-    private final String recipient;
+    private final String year;
     private final String personId;
+    private final String recipient;
+    private final boolean won;
+    private final String awardName;
 
-    public Award(String awardId, String name, String awardName, boolean won, String year, String category, String awardCatId, String recipient, String personId) {
+    public Award(String awardId, String rootId, String name, String category, String awardCatId, String year, String personId, String recipient, boolean won, String awardName) {
         this.awardId = awardId;
+        this.rootId = rootId;
         this.name = name;
-        this.awardName = awardName;
-        this.won = won;
-        this.year = year;
         this.category = category;
         this.awardCatId = awardCatId;
-        this.recipient = recipient;
+        this.year = year;
         this.personId = personId;
+        this.recipient = recipient;
+        this.won = won;
+        this.awardName = awardName;
     }
 
     public String getAwardId() {
         return awardId;
     }
 
+    public String getRootId() {
+        return rootId;
+    }
+
     public String getName() {
         return name;
-    }
-
-    public String getAwardName() {
-        return awardName;
-    }
-
-    public boolean getWon() {
-        return won;
-    }
-
-    public String getYear() {
-        return year;
     }
 
     public String getCategory() {
@@ -52,11 +46,23 @@ public class Award {
         return awardCatId;
     }
 
-    public String getRecipient() {
-        return recipient;
+    public String getYear() {
+        return year;
     }
 
     public String getPersonId() {
         return personId;
+    }
+
+    public String getRecipient() {
+        return recipient;
+    }
+
+    public boolean getWon() {
+        return won;
+    }
+
+    public String getAwardName() {
+        return awardName;
     }
 }
