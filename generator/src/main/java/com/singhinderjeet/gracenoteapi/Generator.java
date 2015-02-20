@@ -168,6 +168,15 @@ public class Generator {
       .addMappings(keywordMappings);
     generator.processJson("/program-details.json", "Program", programMappings);
 
+    CustomMappings episodicProgramMappings = new CustomMappings()
+      .addMappings(programMappings)
+      .mapFieldName("EpisodicProgram", "shortdescription", "shortDescription")
+      .mapType("Shortdescription", "String")
+      .mapType("EpisodeTitle", "String")
+      .mapType("SeasonNum", "int")
+      .mapType("EpisodeNum", "int");
+    generator.processJson("/episodic-program.json", "EpisodicProgram", episodicProgramMappings);
+
     CustomMappings movieMappings = new CustomMappings()
       .addMappings(programMappings)
       .addMappings(qualityRatingMappings)

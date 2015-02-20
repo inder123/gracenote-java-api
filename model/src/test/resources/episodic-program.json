@@ -1,0 +1,24 @@
+{
+  "tmsId": "EP015314270020",
+  "rootId": "9362638",
+  "seriesId": "9085357",
+  "title": "The Countdown",
+  "titleLang": "en",
+  "shortdescription": "A countdown of the best Clint Eastwood films shows the actor as: a gunslinger, a disc jockey.",
+  "longDescription": "A countdown of the best Clint Eastwood films shows the actor as: an Old West gunslinger, a boxing coach, a war vet, a prison escapee, and a disc jockey.",
+  "descriptionLang": "en",
+  "subType": "Series",
+  "genres": ["Entertainment"],
+  "origAirDate": "2012-08-09",
+  "preferredImage": {
+    "uri": "tvbanners/v5/AllPhotos/9085357/p9085357_b_v5_aa.jpg",
+    "height": "360",
+    "width": "240",
+    "primary": "true",
+    "category": "Banner"
+  },
+  "episodeTitle": "Clint Eastwood",
+  "seasonNum": 1,
+  "episodeNum": 20,
+  "entityType": "Episode"
+}
