@@ -62,7 +62,7 @@ public class Generator {
       .mapType("AffiliateId", "String")
       .mapType("AffiliateCallSign", "String")
       .mapType("PreferredImage", "Image");
-    generator.processJson("/lineup-channels.json", "Channel", channelMappings);
+    generator.processJson("/lineup-channels.json", "ChannelDetails", channelMappings);
     CustomMappings stationMappings = new CustomMappings()
       .addMappings(channelMappings)
       .mapType("Name", "String")
@@ -74,6 +74,42 @@ public class Generator {
     CustomMappings ratingMappings = new CustomMappings()
       .mapType("Body", "String")
       .mapType("Code", "String");
+
+    CustomMappings creditMappings = new CustomMappings()
+      .mapType("BillingOrder", "String")
+      .mapType("Role", "String")
+      .mapType("NameId", "String")
+      .mapType("PersonId", "String")
+      .mapType("Name", "String")
+      .mapType("CharacterName", "String");
+
+    CustomMappings recommendationMappings = new CustomMappings()
+      .mapType("TmsId", "String")
+      .mapType("Root", "String")
+      .mapType("Title", "String");
+
+    CustomMappings awardMappings = new CustomMappings()
+      .mapType("AwardId", "String")
+      .mapType("Recipient", "String")
+      .mapType("Name", "String")
+      .mapType("AwardName", "String")
+      .mapType("PersonId", "String")
+      .mapType("Year", "String")
+      .mapType("Won", "boolean")
+      .mapType("Category", "String")
+      .mapType("AwardCatId", "String");
+
+    CustomMappings keywordMappings = new CustomMappings()
+      .mapToArrayType("Mood", "String")
+      .mapFieldName("Keywords", "Mood", "mood")
+      .mapFieldName("Keywords", "Time Period", "timePeriod")
+      .mapFieldName("Keywords", "Theme", "theme")
+      .mapFieldName("Keywords", "Time Period", "timePeriod")
+      .mapToArrayType("Time Period", "String")
+      .mapToArrayType("Theme", "String")
+      .mapToArrayType("Character", "String")
+      .mapToArrayType("Setting", "String")
+      .mapToArrayType("Subject", "String");
 
     CustomMappings programMappings = new CustomMappings()
       .mapType("TmsId", "String")
@@ -90,10 +126,24 @@ public class Generator {
       .mapToArrayType("Genres", "String")
       .mapType("ShortDescription", "String")
       .mapType("LongDescription", "String")
+      .mapType("TotalEpisodes", "int")
+      .mapType("TotalSeasons", "int")
+      .mapToArrayType("Cast", "Credit")
+      .mapToArrayType("Crew", "Credit")
       .mapToArrayType("TopCast", "String")
       .mapToArrayType("Directors", "String")
       .mapType("PreferredImage", "Image")
-      .addMappings(ratingMappings);
+      .mapToArrayType("Ratings", "Rating")
+      .mapToArrayType("Awards", "Award")
+      .mapToArrayType("Recommendations", "Recommendation")
+      .addMappings(imageMappings)
+      .addMappings(ratingMappings)
+      .addMappings(creditMappings)
+      .addMappings(recommendationMappings)
+      .addMappings(awardMappings)
+      .addMappings(keywordMappings);
+
+    generator.processJson("/program-details.json", "Program", programMappings);
 
     CustomMappings airingMappings = new CustomMappings()
       .mapType("StartTime", "Date")
@@ -121,6 +171,9 @@ public class Generator {
       .addMappings(stationMappings);
     generator.processJson("/station-airings.json", "StationAiring", stationAiringsMappings);
 
+    CustomMappings adjustments = new CustomMappings()
+      .mapType("ChannelDetails", "Channel");
+    generator.apply(adjustments);
     generator.generateClasses();
   }
 
@@ -130,6 +183,10 @@ public class Generator {
     InputStream json = Generator.class.getResourceAsStream(file);
     InputStreamReader reader = new InputStreamReader(json, "UTF-8");
     converter.processJson(reader, "com.singhinderjeet.gracenoteapi", rootClass, mappings);
+  }
+
+  private void apply(CustomMappings mappings) {
+    converter.transform(mappings);
   }
 
   private void generateClasses() throws Exception {

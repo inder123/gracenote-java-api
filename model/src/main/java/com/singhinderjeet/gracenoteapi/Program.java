@@ -10,36 +10,52 @@ public class Program {
     private final String seriesId;
     private final String subType;
     private final String title;
-    private final String releaseYear;
-    private final String releaseDate;
     private final Date origAirDate;
     private final String titleLang;
     private final String descriptionLang;
     private final String entityType;
     private final List<String> genres;
-    private final String shortDescription;
     private final String longDescription;
-    private final List<String> topCast;
+    private final String shortDescription;
+    private final int totalEpisodes;
+    private final int totalSeasons;
+    private final List<Credit> cast;
+    private final List<Credit> crew;
+    private final List<Award> awards;
+    private final Keywords keywords;
+    private final List<Rating> ratings;
+    private final List<Recommendation> recommendations;
     private final Image preferredImage;
+    private final String releaseYear;
+    private final String releaseDate;
+    private final List<String> topCast;
     private final List<String> directors;
 
-    public Program(String tmsId, String rootId, String seriesId, String subType, String title, String releaseYear, String releaseDate, Date origAirDate, String titleLang, String descriptionLang, String entityType, List<String> genres, String shortDescription, String longDescription, List<String> topCast, Image preferredImage, List<String> directors) {
+    public Program(String tmsId, String rootId, String seriesId, String subType, String title, Date origAirDate, String titleLang, String descriptionLang, String entityType, List<String> genres, String longDescription, String shortDescription, int totalEpisodes, int totalSeasons, List<Credit> cast, List<Credit> crew, List<Award> awards, Keywords keywords, List<Rating> ratings, List<Recommendation> recommendations, Image preferredImage, String releaseYear, String releaseDate, List<String> topCast, List<String> directors) {
         this.tmsId = tmsId;
         this.rootId = rootId;
         this.seriesId = seriesId;
         this.subType = subType;
         this.title = title;
-        this.releaseYear = releaseYear;
-        this.releaseDate = releaseDate;
         this.origAirDate = origAirDate;
         this.titleLang = titleLang;
         this.descriptionLang = descriptionLang;
         this.entityType = entityType;
         this.genres = genres;
-        this.shortDescription = shortDescription;
         this.longDescription = longDescription;
-        this.topCast = topCast;
+        this.shortDescription = shortDescription;
+        this.totalEpisodes = totalEpisodes;
+        this.totalSeasons = totalSeasons;
+        this.cast = cast;
+        this.crew = crew;
+        this.awards = awards;
+        this.keywords = keywords;
+        this.ratings = ratings;
+        this.recommendations = recommendations;
         this.preferredImage = preferredImage;
+        this.releaseYear = releaseYear;
+        this.releaseDate = releaseDate;
+        this.topCast = topCast;
         this.directors = directors;
     }
 
@@ -63,14 +79,6 @@ public class Program {
         return title;
     }
 
-    public String getReleaseYear() {
-        return releaseYear;
-    }
-
-    public String getReleaseDate() {
-        return releaseDate;
-    }
-
     public Date getOrigAirDate() {
         return origAirDate;
     }
@@ -91,20 +99,60 @@ public class Program {
         return genres;
     }
 
-    public String getShortDescription() {
-        return shortDescription;
-    }
-
     public String getLongDescription() {
         return longDescription;
     }
 
-    public List<String> getTopCast() {
-        return topCast;
+    public String getShortDescription() {
+        return shortDescription;
+    }
+
+    public int getTotalEpisodes() {
+        return totalEpisodes;
+    }
+
+    public int getTotalSeasons() {
+        return totalSeasons;
+    }
+
+    public List<Credit> getCast() {
+        return cast;
+    }
+
+    public List<Credit> getCrew() {
+        return crew;
+    }
+
+    public List<Award> getAwards() {
+        return awards;
+    }
+
+    public Keywords getKeywords() {
+        return keywords;
+    }
+
+    public List<Rating> getRatings() {
+        return ratings;
+    }
+
+    public List<Recommendation> getRecommendations() {
+        return recommendations;
     }
 
     public Image getPreferredImage() {
         return preferredImage;
+    }
+
+    public String getReleaseYear() {
+        return releaseYear;
+    }
+
+    public String getReleaseDate() {
+        return releaseDate;
+    }
+
+    public List<String> getTopCast() {
+        return topCast;
     }
 
     public List<String> getDirectors() {
