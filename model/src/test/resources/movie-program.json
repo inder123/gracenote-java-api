@@ -1,0 +1,124 @@
+{ "advisories" : [ "Adult Language",
+      "Violence",
+      "Adult Situations"
+    ],
+  "cast" : [ { "billingOrder" : "01",
+        "characterName" : "Ssgt. Michael Nantz",
+        "name" : "Aaron Eckhart",
+        "nameId" : "73023",
+        "personId" : "73023",
+        "role" : "Actor"
+      },
+      { "billingOrder" : "02",
+        "characterName" : "Tsgt. Elena Santos",
+        "name" : "Michelle Rodriguez",
+        "nameId" : "222033",
+        "personId" : "219616",
+        "role" : "Actor"
+      },
+      { "billingOrder" : "03",
+        "characterName" : "2nd Lt. William Martinez",
+        "name" : "Ramon Rodriguez",
+        "nameId" : "52901",
+        "personId" : "52901",
+        "role" : "Actor"
+      }
+    ],
+  "crew" : [ { "billingOrder" : "01",
+        "name" : "Jonathan Liebesman",
+        "nameId" : "270791",
+        "personId" : "267211",
+        "role" : "Director"
+      },
+      { "billingOrder" : "02",
+        "name" : "Chris Bertolini",
+        "nameId" : "350350",
+        "personId" : "341476",
+        "role" : "Screenwriter"
+      },
+      { "billingOrder" : "03",
+        "name" : "Neal H. Moritz",
+        "nameId" : "318356",
+        "personId" : "274004",
+        "role" : "Producer"
+      }
+    ],
+  "descriptionLang" : "en",
+  "directors" : [ "Jonathan Liebesman" ],
+  "entityType" : "Movie",
+  "genres" : [ "Science fiction",
+      "Action"
+    ],
+  "keywords" : { "Character" : [ "Sergeant",
+          "Lieutenant",
+          "Civilian",
+          "Alien",
+          "Enemy"
+        ],
+      "Mood" : [ "Tense",
+          "Chilling"
+        ],
+      "Setting" : [ "Los Angeles",
+          "Police station",
+          "Underground"
+        ],
+      "Subject" : [ "Alien invasion",
+          "Evacuation",
+          "Battle"
+        ],
+      "Theme" : [ "Quest",
+          "Escape",
+          "Mystery"
+        ],
+      "Time Period" : [ "2010s" ]
+    },
+  "longDescription" : "For many years, humans have reported various UFO sightings around the world, fueling speculation about the existence of life on other worlds. In 2011, mankind learns the truth the hard way when alien invaders attack. One by one, the world's great cities fall, leaving Los Angeles as the battleground for humanity's last stand. It's up to a Marine staff sergeant (Aaron Eckhart) and his platoon to draw a line in the sand against a powerful enemy unlike any previously encountered.",
+  "officialUrl" : "http://www.battlela.com/",
+  "preferredImage" : { "caption" : { "content" : "Battle: Los Angeles (2011)",
+          "lang" : "en"
+        },
+      "category" : "Poster Art",
+      "height" : "360",
+      "primary" : "true",
+      "uri" : "assets/p8288118_p_v5_aa.jpg",
+      "width" : "240"
+    },
+  "qualityRating" : { "ratingsBody" : "TMS",
+      "value" : "2"
+    },
+  "ratings" : [ { "body" : "Alberta's Film Classification Board",
+        "code" : "14A"
+      },
+      { "body" : "Departamento de Justiça, Classificação, Títulos e Qualificação",
+        "code" : "14"
+      },
+      { "body" : "Motion Picture Association of America",
+        "code" : "PG-13"
+      }
+    ],
+  "recommendations" : [ { "rootId" : "8176375",
+        "title" : "Transformers: Dark of the Moon",
+        "tmsId" : "MV003246950000"
+      },
+      { "rootId" : "8777089",
+        "title" : "Battleship",
+        "tmsId" : "MV003679220000"
+      },
+      { "rootId" : "8726110",
+        "title" : "John Carter",
+        "tmsId" : "MV003644810000"
+      },
+      { "rootId" : "9360990",
+        "title" : "Pacific Rim",
+        "tmsId" : "MV004061220000"
+      }
+    ],
+  "releaseYear" : 2011,
+  "rootId" : "8288118",
+  "runTime" : "PT01H56M",
+  "shortDescription" : "A Marine officer (Aaron Eckhart) and his platoon make a daring stand against alien invaders.",
+  "subType" : "Feature Film",
+  "title" : "Battle: Los Angeles",
+  "titleLang" : "en",
+  "tmsId" : "MV003331980000"
+}

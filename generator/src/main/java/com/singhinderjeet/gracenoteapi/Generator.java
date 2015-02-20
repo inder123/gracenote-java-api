@@ -47,6 +47,7 @@ public class Generator {
     generator.processJson("/lineups-by-postal-code2.json", "LineupDetails", lineupMappings);
 
     CustomMappings commonMappings = new CustomMappings()
+      .mapType("TmsId", "String")
       .mapType("RootId", "String")
       .mapType("Lang", "String");
 
@@ -101,7 +102,7 @@ public class Generator {
     generator.processJson("/credits.json", "Credit", creditMappings);
 
     CustomMappings recommendationMappings = new CustomMappings()
-      .mapType("TmsId", "String")
+      .addMappings(commonMappings)
       .mapType("Root", "String")
       .mapType("Title", "String");
 
@@ -129,6 +130,10 @@ public class Generator {
       .mapToArrayType("Character", "String")
       .mapToArrayType("Setting", "String")
       .mapToArrayType("Subject", "String");
+
+    CustomMappings qualityRatingMappings = new CustomMappings()
+      .mapType("RatingsBody", "String")
+      .mapType("Value", "String");
 
     CustomMappings programMappings = new CustomMappings()
       .mapType("TmsId", "String")
@@ -161,8 +166,15 @@ public class Generator {
       .addMappings(recommendationMappings)
       .addMappings(awardMappings)
       .addMappings(keywordMappings);
-
     generator.processJson("/program-details.json", "Program", programMappings);
+
+    CustomMappings movieMappings = new CustomMappings()
+      .addMappings(programMappings)
+      .addMappings(qualityRatingMappings)
+      .mapType("OfficialUrl", "String")
+      .mapType("RunTime", "String")
+      .mapToArrayType("Advisories", "String");
+    generator.processJson("/movie-program.json", "Movie", movieMappings);
 
     CustomMappings airingMappings = new CustomMappings()
       .mapType("StartTime", "Date")

@@ -28,22 +28,21 @@ import com.google.gson.GsonBuilder;
 import com.singhinderjeet.gracenoteapi.json.GracenoteApiTypeAdapterFactory;
 
 /**
- * Unit tests for {@link Program}.
+ * Unit tests for {@link Movie}.
  *
  * @author Inderjeet Singh
  */
-public class ProgramTest {
+public class MovieTest {
   private final Gson gson = new GsonBuilder()
     .registerTypeAdapterFactory(new GracenoteApiTypeAdapterFactory())
     .create();
 
   @Test
-  public void testProgramJson() throws Exception {
-    InputStream is = ProgramTest.class.getResourceAsStream("/program-details.json");
-    Program program = gson.fromJson(new InputStreamReader(is), Program.class);
-    assertEquals("Hugh Laurie", program.getCast().get(0).getName());
-    assertEquals("Fascinating", program.getKeywords().getMood().get(0));
-    String json = gson.toJson(program);
-    assertTrue(json.contains("Time Period"));
+  public void testMovieJson() throws Exception {
+    InputStream is = MovieTest.class.getResourceAsStream("/movie-program.json");
+    Movie movie = gson.fromJson(new InputStreamReader(is), Movie.class);
+    assertEquals("Adult Situations", movie.getAdvisories().get(2));
+    String json = gson.toJson(movie);
+    assertTrue(json.contains("Jonathan Liebesman"));
   }
 }
