@@ -76,12 +76,17 @@ public class Generator {
       .mapType("Code", "String");
 
     CustomMappings creditMappings = new CustomMappings()
-      .mapType("BillingOrder", "String")
-      .mapType("Role", "String")
-      .mapType("NameId", "String")
       .mapType("PersonId", "String")
+      .mapType("NameId", "String")
       .mapType("Name", "String")
-      .mapType("CharacterName", "String");
+      .mapType("RootId", "String")
+      .mapType("Title", "String")
+      .mapType("Role", "String")
+      .mapType("BillingOrder", "String")
+      .mapType("CharacterName", "String")
+      .mapType("Year", "String")
+      .mapType("Type", "String");
+    generator.processJson("/credits.json", "Credit", creditMappings);
 
     CustomMappings recommendationMappings = new CustomMappings()
       .mapType("TmsId", "String")
