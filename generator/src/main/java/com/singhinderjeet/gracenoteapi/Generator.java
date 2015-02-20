@@ -47,7 +47,8 @@ public class Generator {
     generator.processJson("/lineups-by-postal-code2.json", "LineupDetails", lineupMappings);
 
     CustomMappings commonMappings = new CustomMappings()
-      .mapType("RootId", "String");
+      .mapType("RootId", "String")
+      .mapType("Lang", "String");
 
     CustomMappings imageMappings = new CustomMappings()
       .mapType("Uri", "String")
@@ -56,7 +57,13 @@ public class Generator {
       .mapType("Primary", "boolean")
       .mapType("Category", "String")
       .mapType("Text", "String")
-      .mapType("Tier", "String");
+      .mapType("Tier", "String")
+      .mapType("Size", "String")  // could be enum
+      .mapType("Aspect", "String")  // could be enum
+      .mapType("Content", "String")
+      .addMappings(commonMappings);
+    generator.processJson("/images.json", "Image", imageMappings);
+
     CustomMappings channelMappings = new CustomMappings()
       .addMappings(imageMappings)
       .mapType("CallSign", "String")
@@ -65,6 +72,8 @@ public class Generator {
       .mapType("AffiliateId", "String")
       .mapType("AffiliateCallSign", "String")
       .mapType("PreferredImage", "Image");
+    // ChannelDetails will be renamed to Channel later.
+    // We name it something different because Channel occurs otherwise in JSON as a String.
     generator.processJson("/lineup-channels.json", "ChannelDetails", channelMappings);
     CustomMappings stationMappings = new CustomMappings()
       .addMappings(channelMappings)
