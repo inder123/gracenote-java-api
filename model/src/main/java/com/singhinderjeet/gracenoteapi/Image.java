@@ -2,8 +2,8 @@ package com.singhinderjeet.gracenoteapi;
 
 public class Image {
 
-    private final int width;
-    private final int height;
+    private final String width;
+    private final String height;
     private final Caption caption;
     private final String uri;
     private final String size;
@@ -13,7 +13,7 @@ public class Image {
     private final boolean primary;
     private final String tier;
 
-    public Image(int width, int height, Caption caption, String uri, String size, String aspect, String category, String text, boolean primary, String tier) {
+    public Image(String width, String height, Caption caption, String uri, String size, String aspect, String category, String text, boolean primary, String tier) {
         this.width = width;
         this.height = height;
         this.caption = caption;
@@ -26,11 +26,11 @@ public class Image {
         this.tier = tier;
     }
 
-    public int getWidth() {
+    public String getWidth() {
         return width;
     }
 
-    public int getHeight() {
+    public String getHeight() {
         return height;
     }
 

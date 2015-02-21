@@ -18,7 +18,7 @@ public class Movie {
     private final QualityRating qualityRating;
     private final List<Rating> ratings;
     private final List<Recommendation> recommendations;
-    private final String releaseYear;
+    private final int releaseYear;
     private final String rootId;
     private final String runTime;
     private final String shortDescription;
@@ -27,7 +27,7 @@ public class Movie {
     private final String titleLang;
     private final String tmsId;
 
-    public Movie(List<String> advisories, List<Credit> cast, List<Credit> crew, String descriptionLang, List<String> directors, String entityType, List<String> genres, Keywords keywords, String longDescription, String officialUrl, Image preferredImage, QualityRating qualityRating, List<Rating> ratings, List<Recommendation> recommendations, String releaseYear, String rootId, String runTime, String shortDescription, String subType, String title, String titleLang, String tmsId) {
+    public Movie(List<String> advisories, List<Credit> cast, List<Credit> crew, String descriptionLang, List<String> directors, String entityType, List<String> genres, Keywords keywords, String longDescription, String officialUrl, Image preferredImage, QualityRating qualityRating, List<Rating> ratings, List<Recommendation> recommendations, int releaseYear, String rootId, String runTime, String shortDescription, String subType, String title, String titleLang, String tmsId) {
         this.advisories = advisories;
         this.cast = cast;
         this.crew = crew;
@@ -108,7 +108,7 @@ public class Movie {
         return recommendations;
     }
 
-    public String getReleaseYear() {
+    public int getReleaseYear() {
         return releaseYear;
     }
 

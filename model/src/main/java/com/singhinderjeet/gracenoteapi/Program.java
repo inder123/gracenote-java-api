@@ -18,7 +18,7 @@ public class Program {
     private final String longDescription;
     private final String shortDescription;
     private final int totalEpisodes;
-    private final int totalSeasons;
+    private final String totalSeasons;
     private final List<Credit> cast;
     private final List<Credit> crew;
     private final List<Award> awards;
@@ -26,12 +26,12 @@ public class Program {
     private final List<Rating> ratings;
     private final List<Recommendation> recommendations;
     private final Image preferredImage;
-    private final String releaseYear;
+    private final int releaseYear;
     private final String releaseDate;
     private final List<String> topCast;
     private final List<String> directors;
 
-    public Program(String tmsId, String rootId, String seriesId, String subType, String title, Date origAirDate, String titleLang, String descriptionLang, String entityType, List<String> genres, String longDescription, String shortDescription, int totalEpisodes, int totalSeasons, List<Credit> cast, List<Credit> crew, List<Award> awards, Keywords keywords, List<Rating> ratings, List<Recommendation> recommendations, Image preferredImage, String releaseYear, String releaseDate, List<String> topCast, List<String> directors) {
+    public Program(String tmsId, String rootId, String seriesId, String subType, String title, Date origAirDate, String titleLang, String descriptionLang, String entityType, List<String> genres, String longDescription, String shortDescription, int totalEpisodes, String totalSeasons, List<Credit> cast, List<Credit> crew, List<Award> awards, Keywords keywords, List<Rating> ratings, List<Recommendation> recommendations, Image preferredImage, int releaseYear, String releaseDate, List<String> topCast, List<String> directors) {
         this.tmsId = tmsId;
         this.rootId = rootId;
         this.seriesId = seriesId;
@@ -111,7 +111,7 @@ public class Program {
         return totalEpisodes;
     }
 
-    public int getTotalSeasons() {
+    public String getTotalSeasons() {
         return totalSeasons;
     }
 
@@ -143,7 +143,7 @@ public class Program {
         return preferredImage;
     }
 
-    public String getReleaseYear() {
+    public int getReleaseYear() {
         return releaseYear;
     }
 
