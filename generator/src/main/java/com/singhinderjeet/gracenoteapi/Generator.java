@@ -15,9 +15,12 @@
  */
 package com.singhinderjeet.gracenoteapi;
 
+import java.io.BufferedReader;
 import java.io.File;
+import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
+import java.io.Reader;
 
 import com.singhinderjeet.json2java.ClassDefCollection;
 import com.singhinderjeet.json2java.CustomMappings;
@@ -33,17 +36,31 @@ public class Generator {
   public static void main(String[] args) throws Exception {
     File outputDir = new File("../model/src/main/java");
     String pkgName = "com.singhinderjeet.gracenoteapi";
-    Generator generator = new Generator(outputDir, pkgName);
+    String fileCopyrightNotice = readAsString(new InputStreamReader(
+        Generator.class.getResourceAsStream("/class-file-copyright-notice.txt")));
+    Generator generator = new Generator(outputDir, pkgName, fileCopyrightNotice);
     generator.generateClasses();
+  }
+
+  public static String readAsString(Reader reader) {
+    StringBuilder sb = new StringBuilder();
+    try (BufferedReader bufReader = new BufferedReader(reader)) {
+      while (bufReader.ready()) {
+        sb.append(bufReader.readLine()).append("\n");
+      }
+    } catch (IOException ignored) { }
+    return sb.toString();
   }
 
   private final File outputDir;
   private final String pkgName;
+  private final String fileCopyrightNotice;
   private final Json2Java converter = new Json2Java();
 
-  public Generator(File outputDir, String pkgName) {
+  public Generator(File outputDir, String pkgName, String fileCopyrightNotice) {
     this.outputDir = outputDir;
     this.pkgName = pkgName;
+    this.fileCopyrightNotice = fileCopyrightNotice;
   }
 
   public void generateClasses() throws Exception {
@@ -112,6 +129,7 @@ public class Generator {
     processJson("/station-airings.json", "StationAiring", stationAiringsMappings);
 
     ClassDefCollection classes = converter.getClasses();
+    classes.setFileCopyrightNotice(fileCopyrightNotice);
     classes.generateClasses(outputDir, "    ");
   }
 
