@@ -31,26 +31,40 @@ import com.singhinderjeet.json2java.Json2Java;
 public class Generator {
 
   public static void main(String[] args) throws Exception {
-    Generator generator = new Generator();
+    File outputDir = new File("../model/src/main/java");
+    String pkgName = "com.singhinderjeet.gracenoteapi";
+    Generator generator = new Generator(outputDir, pkgName);
+    generator.generateClasses();
+  }
 
-    generator.processJson("/lineup-details.json", "LineupDetails", null);
-    generator.processJson("/lineups-by-postal-code1.json", "LineupDetails", null);
-    generator.processJson("/lineups-by-postal-code2.json", "LineupDetails", null);
+  private final File outputDir;
+  private final String pkgName;
+  private final Json2Java converter = new Json2Java();
+
+  public Generator(File outputDir, String pkgName) {
+    this.outputDir = outputDir;
+    this.pkgName = pkgName;
+  }
+
+  public void generateClasses() throws Exception {
+    processJson("/lineup-details.json", "LineupDetails", null);
+    processJson("/lineups-by-postal-code1.json", "LineupDetails", null);
+    processJson("/lineups-by-postal-code2.json", "LineupDetails", null);
 
     CustomMappings imageMappings = new CustomMappings(); // Size and Aspect can be enums
-    generator.processJson("/images.json", "Image", imageMappings);
+    processJson("/images.json", "Image", imageMappings);
 
     CustomMappings channelMappings = new CustomMappings()
       .addMappings(imageMappings)
       .mapType("PreferredImage", "Image");
-    generator.processJson("/lineup-channels.json", "Channel", channelMappings);
+    processJson("/lineup-channels.json", "Channel", channelMappings);
 
     CustomMappings stationMappings = new CustomMappings()
       .addMappings(channelMappings);
-    generator.processJson("/station-details.json", "Station", stationMappings);
+    processJson("/station-details.json", "Station", stationMappings);
 
-    generator.processJson("/credits.json", "Credit", null);
-    generator.processJson("/awards.json", "Award", null);
+    processJson("/credits.json", "Credit", null);
+    processJson("/awards.json", "Award", null);
 
     CustomMappings keywordMappings = new CustomMappings()
       .mapFieldName("Keywords", "Mood", "mood")
@@ -68,16 +82,16 @@ public class Generator {
       .mapToArrayType("Recommendations", "Recommendation")
       .addMappings(imageMappings)
       .addMappings(keywordMappings);
-    generator.processJson("/program-details.json", "Program", programMappings);
+    processJson("/program-details.json", "Program", programMappings);
 
     CustomMappings episodicProgramMappings = new CustomMappings()
       .addMappings(programMappings)
       .mapFieldName("EpisodicProgram", "shortdescription", "shortDescription");
-    generator.processJson("/episodic-program.json", "EpisodicProgram", episodicProgramMappings);
+    processJson("/episodic-program.json", "EpisodicProgram", episodicProgramMappings);
 
     CustomMappings movieMappings = new CustomMappings()
       .addMappings(programMappings);
-    generator.processJson("/movie-program.json", "Movie", movieMappings);
+    processJson("/movie-program.json", "Movie", movieMappings);
 
     CustomMappings airingMappings = new CustomMappings()
       .mapType("StartTime", "Date")
@@ -89,28 +103,21 @@ public class Generator {
       .mapToArrayType("Airings", "Airing")
       .addMappings(airingMappings)
       .addMappings(programMappings);
-    generator.processJson("/lineup-airings-basic-size.json", "LineupAirings", airingsMappings);
-    generator.processJson("/lineup-airings-detailed-size.json", "LineupAirings", airingsMappings);
+    processJson("/lineup-airings-basic-size.json", "LineupAirings", airingsMappings);
+    processJson("/lineup-airings-detailed-size.json", "LineupAirings", airingsMappings);
 
     CustomMappings stationAiringsMappings = new CustomMappings()
       .addMappings(airingMappings)
       .addMappings(stationMappings);
-    generator.processJson("/station-airings.json", "StationAiring", stationAiringsMappings);
+    processJson("/station-airings.json", "StationAiring", stationAiringsMappings);
 
-    generator.generateClasses();
+    ClassDefCollection classes = converter.getClasses();
+    classes.generateClasses(outputDir, "    ");
   }
-
-  private final Json2Java converter = new Json2Java();
 
   private void processJson(String file, String rootClass, CustomMappings mappings) throws Exception {
     InputStream json = Generator.class.getResourceAsStream(file);
     InputStreamReader reader = new InputStreamReader(json, "UTF-8");
-    converter.processJson(reader, "com.singhinderjeet.gracenoteapi", rootClass, mappings);
-  }
-
-  private void generateClasses() throws Exception {
-    File dir = new File("../model/src/main/java");
-    ClassDefCollection classes = converter.getClasses();
-    classes.generateClasses(dir, "    ");
+    converter.processJson(reader, pkgName, rootClass, mappings);
   }
 }
