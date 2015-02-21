@@ -19,6 +19,11 @@ import com.google.gson.annotations.SerializedName;
 import java.util.Date;
 import java.util.List;
 
+/**
+ * The EpisodicProgram class
+ *
+ * @author Inderjeet Singh
+ */
 public class EpisodicProgram {
 
     private final String tmsId;

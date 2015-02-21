@@ -17,6 +17,11 @@ package com.singhinderjeet.gracenoteapi;
 
 import java.util.List;
 
+/**
+ * The LineupAirings class
+ *
+ * @author Inderjeet Singh
+ */
 public class LineupAirings {
 
     private final String stationId;

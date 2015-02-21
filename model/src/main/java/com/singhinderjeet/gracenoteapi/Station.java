@@ -17,6 +17,11 @@ package com.singhinderjeet.gracenoteapi;
 
 import java.util.List;
 
+/**
+ * The Station class
+ *
+ * @author Inderjeet Singh
+ */
 public class Station {
 
     private final String stationId;

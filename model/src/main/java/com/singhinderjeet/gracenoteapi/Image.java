@@ -15,6 +15,11 @@
  */
 package com.singhinderjeet.gracenoteapi;
 
+/**
+ * The Image class
+ *
+ * @author Inderjeet Singh
+ */
 public class Image {
 
     private final String width;

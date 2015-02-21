@@ -17,6 +17,11 @@ package com.singhinderjeet.gracenoteapi;
 
 import java.util.List;
 
+/**
+ * The Movie class
+ *
+ * @author Inderjeet Singh
+ */
 public class Movie {
 
     private final List<String> advisories;

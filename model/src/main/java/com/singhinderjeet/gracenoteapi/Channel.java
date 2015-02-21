@@ -15,6 +15,11 @@
  */
 package com.singhinderjeet.gracenoteapi;
 
+/**
+ * The Channel class
+ *
+ * @author Inderjeet Singh
+ */
 public class Channel {
 
     private final String channel;

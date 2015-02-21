@@ -18,6 +18,11 @@ package com.singhinderjeet.gracenoteapi;
 import java.util.Date;
 import java.util.List;
 
+/**
+ * The Airing class
+ *
+ * @author Inderjeet Singh
+ */
 public class Airing {
 
     private final Date startTime;

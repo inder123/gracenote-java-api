@@ -15,6 +15,11 @@
  */
 package com.singhinderjeet.gracenoteapi;
 
+/**
+ * The Rating class
+ *
+ * @author Inderjeet Singh
+ */
 public class Rating {
 
     private final String code;

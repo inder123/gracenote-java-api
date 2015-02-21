@@ -15,6 +15,11 @@
  */
 package com.singhinderjeet.gracenoteapi;
 
+/**
+ * The QualityRating class
+ *
+ * @author Inderjeet Singh
+ */
 public class QualityRating {
 
     private final String ratingsBody;

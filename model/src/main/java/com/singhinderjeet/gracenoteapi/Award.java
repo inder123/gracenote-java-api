@@ -15,6 +15,11 @@
  */
 package com.singhinderjeet.gracenoteapi;
 
+/**
+ * The Award class
+ *
+ * @author Inderjeet Singh
+ */
 public class Award {
 
     private final String awardId;

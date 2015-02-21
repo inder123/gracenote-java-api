@@ -18,6 +18,11 @@ package com.singhinderjeet.gracenoteapi;
 import com.google.gson.annotations.SerializedName;
 import java.util.List;
 
+/**
+ * The Keywords class
+ *
+ * @author Inderjeet Singh
+ */
 public class Keywords {
 
     @SerializedName("Mood")

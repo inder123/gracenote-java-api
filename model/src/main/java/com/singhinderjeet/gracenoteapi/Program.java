@@ -18,6 +18,11 @@ package com.singhinderjeet.gracenoteapi;
 import java.util.Date;
 import java.util.List;
 
+/**
+ * The Program class
+ *
+ * @author Inderjeet Singh
+ */
 public class Program {
 
     private final String tmsId;

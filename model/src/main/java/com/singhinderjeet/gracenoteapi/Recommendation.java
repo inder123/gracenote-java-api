@@ -15,6 +15,11 @@
  */
 package com.singhinderjeet.gracenoteapi;
 
+/**
+ * The Recommendation class
+ *
+ * @author Inderjeet Singh
+ */
 public class Recommendation {
 
     private final String tmsId;

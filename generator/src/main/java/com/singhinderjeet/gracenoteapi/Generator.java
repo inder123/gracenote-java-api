@@ -38,7 +38,9 @@ public class Generator {
     String pkgName = "com.singhinderjeet.gracenoteapi";
     String fileCopyrightNotice = readAsString(new InputStreamReader(
         Generator.class.getResourceAsStream("/class-file-copyright-notice.txt")));
-    Generator generator = new Generator(outputDir, pkgName, fileCopyrightNotice);
+    String defaultClassComment = readAsString(new InputStreamReader(
+        Generator.class.getResourceAsStream("/default-class-comment.txt")));
+    Generator generator = new Generator(outputDir, pkgName, fileCopyrightNotice, defaultClassComment);
     generator.generateClasses();
   }
 
@@ -55,12 +57,14 @@ public class Generator {
   private final File outputDir;
   private final String pkgName;
   private final String fileCopyrightNotice;
+  private final String defaultClassComment;
   private final Json2Java converter = new Json2Java();
 
-  public Generator(File outputDir, String pkgName, String fileCopyrightNotice) {
+  public Generator(File outputDir, String pkgName, String fileCopyrightNotice, String defaultClassComment) {
     this.outputDir = outputDir;
     this.pkgName = pkgName;
     this.fileCopyrightNotice = fileCopyrightNotice;
+    this.defaultClassComment = defaultClassComment;
   }
 
   public void generateClasses() throws Exception {
@@ -130,6 +134,7 @@ public class Generator {
 
     ClassDefCollection classes = converter.getClasses();
     classes.setFileCopyrightNotice(fileCopyrightNotice);
+    classes.setDefaultClassComment(defaultClassComment);
     classes.generateClasses(outputDir, "    ");
   }
 

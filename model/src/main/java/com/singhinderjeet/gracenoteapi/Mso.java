@@ -15,6 +15,11 @@
  */
 package com.singhinderjeet.gracenoteapi;
 
+/**
+ * The Mso class
+ *
+ * @author Inderjeet Singh
+ */
 public class Mso {
 
     private final String id;

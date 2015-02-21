@@ -15,6 +15,11 @@
  */
 package com.singhinderjeet.gracenoteapi;
 
+/**
+ * The Caption class
+ *
+ * @author Inderjeet Singh
+ */
 public class Caption {
 
     private final String content;

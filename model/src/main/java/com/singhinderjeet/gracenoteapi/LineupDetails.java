@@ -15,6 +15,11 @@
  */
 package com.singhinderjeet.gracenoteapi;
 
+/**
+ * The LineupDetails class
+ *
+ * @author Inderjeet Singh
+ */
 public class LineupDetails {
 
     private final String type;

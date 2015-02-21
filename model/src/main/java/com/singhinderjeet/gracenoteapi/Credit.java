@@ -15,6 +15,11 @@
  */
 package com.singhinderjeet.gracenoteapi;
 
+/**
+ * The Credit class
+ *
+ * @author Inderjeet Singh
+ */
 public class Credit {
 
     private final String personId;
