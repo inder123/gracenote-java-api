@@ -1,0 +1,39 @@
+{
+  "tmsId": "SP002900240000",
+  "rootId": "10298347",
+  "seriesId": "191276",
+  "title": "NBA Basketball",
+  "titleLang": "en",
+  "shortDescription": "From Barclays Center in Brooklyn, N.Y.",
+  "longDescription": "From Barclays Center in Brooklyn, N.Y.",
+  "descriptionLang": "en",
+  "genres": ["Basketball"],
+  "eventTitle": "Miami Heat at Brooklyn Nets",
+  "subType": "Sports event",
+  "gameDate": "2014-01-10",
+  "gameTime": "20:00:00-05:00",
+  "gameTimeZone": "Eastern Observing",
+  "organizationId": "19",
+  "sportsId": "59",
+  "teams": [
+    {"name": "Miami Heat", "teamBrandId": "414"},
+    {"name": "Brooklyn Nets", "isHome": true, "teamBrandId": "7277"}
+  ],
+  "venue": {
+    "content": "Barclays Center",
+    "venueBrandId": "1257"
+  },
+  "season": {
+    "content": "2013-2014",
+    "type": "Reg"
+  },
+  "preferredImage": {
+    "uri": "assets/p191276_b_v5_aa.jpg",
+    "height": "360",
+    "width": "240",
+    "primary": "true",
+    "category": "Banner-L3",
+    "tier": "Sport"
+  },
+  "entityType": "Sports"
+}

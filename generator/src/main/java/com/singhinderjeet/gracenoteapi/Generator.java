@@ -114,6 +114,11 @@ public class Generator {
       .addMappings(programMappings);
     processJson("/movie-program.json", "Movie", movieMappings);
 
+    CustomMappings sportsEventProgramMappings = new CustomMappings()
+      .addMappings(programMappings)
+      .mapToArrayType("Teams", "Team");
+    processJson("/sports-event-program.json", "SportsEventProgram", sportsEventProgramMappings);
+
     CustomMappings airingMappings = new CustomMappings()
       .mapType("StartTime", "Date")
       .mapType("EndTime", "Date")
