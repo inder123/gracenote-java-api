@@ -45,5 +45,11 @@ public class ProgramTest {
     assertEquals("Fascinating", program.getKeywords().getMood().get(0));
     String json = gson.toJson(program);
     assertTrue(json.contains("Time Period"));
+
+    is = ProgramTest.class.getResourceAsStream("/series.json");
+    program = gson.fromJson(new InputStreamReader(is), Program.class);
+    assertEquals("Medical profession", program.getKeywords().getSubject().get(0));
+    json = gson.toJson(program);
+    assertTrue(json.contains("assets/p185044_b_v5_aa.jpg"));
   }
 }

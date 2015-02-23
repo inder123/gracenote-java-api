@@ -48,10 +48,11 @@ public class Program {
     private final Image preferredImage;
     private final int releaseYear;
     private final String releaseDate;
+    private final String episodeTitle;
     private final List<String> topCast;
     private final List<String> directors;
 
-    public Program(String tmsId, String rootId, String seriesId, String subType, String title, Date origAirDate, String titleLang, String descriptionLang, String entityType, List<String> genres, String longDescription, String shortDescription, int totalEpisodes, String totalSeasons, List<Credit> cast, List<Credit> crew, List<Award> awards, Keywords keywords, List<Rating> ratings, List<Recommendation> recommendations, Image preferredImage, int releaseYear, String releaseDate, List<String> topCast, List<String> directors) {
+    public Program(String tmsId, String rootId, String seriesId, String subType, String title, Date origAirDate, String titleLang, String descriptionLang, String entityType, List<String> genres, String longDescription, String shortDescription, int totalEpisodes, String totalSeasons, List<Credit> cast, List<Credit> crew, List<Award> awards, Keywords keywords, List<Rating> ratings, List<Recommendation> recommendations, Image preferredImage, int releaseYear, String releaseDate, String episodeTitle, List<String> topCast, List<String> directors) {
         this.tmsId = tmsId;
         this.rootId = rootId;
         this.seriesId = seriesId;
@@ -75,6 +76,7 @@ public class Program {
         this.preferredImage = preferredImage;
         this.releaseYear = releaseYear;
         this.releaseDate = releaseDate;
+        this.episodeTitle = episodeTitle;
         this.topCast = topCast;
         this.directors = directors;
     }
@@ -169,6 +171,10 @@ public class Program {
 
     public String getReleaseDate() {
         return releaseDate;
+    }
+
+    public String getEpisodeTitle() {
+        return episodeTitle;
     }
 
     public List<String> getTopCast() {

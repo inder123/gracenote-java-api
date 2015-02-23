@@ -104,6 +104,7 @@ public class Generator {
       .addMappings(imageMappings)
       .addMappings(keywordMappings);
     processJson("/program-details.json", "Program", programMappings);
+    processJson("/series.json", "Program", programMappings);
 
     CustomMappings episodicProgramMappings = new CustomMappings()
       .addMappings(programMappings)
@@ -122,20 +123,18 @@ public class Generator {
     CustomMappings airingMappings = new CustomMappings()
       .mapType("StartTime", "Date")
       .mapType("EndTime", "Date")
-      .addMappings(programMappings);
+      .addMappings(programMappings)
+      .addMappings(stationMappings);
+
+    processJson("/series-airings.json", "Airing", airingMappings);
+    processJson("/station-airings.json", "Airing", airingMappings);
 
     CustomMappings airingsMappings = new CustomMappings()
       .addMappings(imageMappings)
       .mapToArrayType("Airings", "Airing")
-      .addMappings(airingMappings)
-      .addMappings(programMappings);
+      .addMappings(airingMappings);
     processJson("/lineup-airings-basic-size.json", "LineupAirings", airingsMappings);
     processJson("/lineup-airings-detailed-size.json", "LineupAirings", airingsMappings);
-
-    CustomMappings stationAiringsMappings = new CustomMappings()
-      .addMappings(airingMappings)
-      .addMappings(stationMappings);
-    processJson("/station-airings.json", "StationAiring", stationAiringsMappings);
 
     ClassDefCollection classes = converter.getClasses();
     classes.setFileCopyrightNotice(fileCopyrightNotice);

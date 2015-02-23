@@ -29,19 +29,21 @@ public class Airing {
     private final Date endTime;
     private final int duration;
     private final List<String> qualifiers;
-    private final String stationId;
-    private final Program program;
     private final List<String> channels;
+    private final Program program;
+    private final String stationId;
+    private final Station station;
     private final List<Rating> ratings;
 
-    public Airing(Date startTime, Date endTime, int duration, List<String> qualifiers, String stationId, Program program, List<String> channels, List<Rating> ratings) {
+    public Airing(Date startTime, Date endTime, int duration, List<String> qualifiers, List<String> channels, Program program, String stationId, Station station, List<Rating> ratings) {
         this.startTime = startTime;
         this.endTime = endTime;
         this.duration = duration;
         this.qualifiers = qualifiers;
-        this.stationId = stationId;
-        this.program = program;
         this.channels = channels;
+        this.program = program;
+        this.stationId = stationId;
+        this.station = station;
         this.ratings = ratings;
     }
 
@@ -61,16 +63,20 @@ public class Airing {
         return qualifiers;
     }
 
-    public String getStationId() {
-        return stationId;
+    public List<String> getChannels() {
+        return channels;
     }
 
     public Program getProgram() {
         return program;
     }
 
-    public List<String> getChannels() {
-        return channels;
+    public String getStationId() {
+        return stationId;
+    }
+
+    public Station getStation() {
+        return station;
     }
 
     public List<Rating> getRatings() {

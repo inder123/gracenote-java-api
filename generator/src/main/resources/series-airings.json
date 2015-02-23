@@ -1,0 +1,36 @@
+[
+  {
+    "startTime":"2015-02-14T11:00Z",
+    "endTime":"2015-02-14T12:00Z",
+    "duration":60,
+    "qualifiers":[ "Stereo", "CC" ], 
+    "channels":[ "101" ],
+    "program":{
+      "tmsId":"EP006883590062",
+      "rootId":"3056254",
+      "seriesId":"185044",
+      "subType":"Series",
+      "title":"House",
+      "episodeTitle":"Insensitive",
+      "origAirDate":"2007-02-13",
+      "titleLang":"en",
+      "descriptionLang":"en",
+      "entityType":"Episode",
+      "genres":[ "Drama", "Mystery", "Medical" ],
+      "shortDescription":"House determines that a patient has a rare condition that makes her completely insensitive to pain."
+    },
+    "stationId":"11207",
+    "station":{
+      "stationId":"11207",
+      "callSign":"USA",
+      "channel":"101",
+      "preferredImage":{
+        "width":"360",
+        "height":"270",
+        "uri":"h3/NowShowing/11207/s11207_h3_aa.png",
+        "category":"Logo",
+        "primary":"true"
+      }
+    }
+  }
+]
