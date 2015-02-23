@@ -1,0 +1,58 @@
+[
+  {
+    "tmsId":"EP015084700001",
+    "rootId":"9120854",
+    "seriesId":"8981323",
+    "subType":"Series",
+    "title":"Anger Management",
+    "episodeTitle":"Charlie Goes Back to Therapy",
+    "origAirDate":"2012-06-28",
+    "titleLang":"en",
+    "descriptionLang":"en",
+    "entityType":"Episode",
+    "genres":["Sitcom"],
+    "longDescription":"Charlie, a baseball player with anger issues decides to return to therapy after a bad run-in with his ex-wife's new boyfriend.",
+    "shortDescription":"Charlie decides to return to therapy after a bad run-in with his ex-wife's new boyfriend.",
+    "episodeNum":1,
+    "seasonNum":1,
+    "topCast":[ "Charlie Sheen", "Selma Blair", "Shawnee Smith" ],
+    "ratings":[ { "code":"TV14", "body":"USA Parental Rating" } ],
+    "preferredImage":{
+      "width":"240",
+      "height":"360",
+      "uri":"assets/p8981323_b_v5_ae.jpg",
+      "category":"Banner-L1",
+      "text":"yes",
+      "primary":"true",
+      "tier":"Series"
+    }
+  },
+  {
+    "tmsId":"EP015084700002",
+    "rootId":"9271054",
+    "seriesId":"8981323",
+    "subType":"Series",
+    "title":"Anger Management",
+    "episodeTitle":"Charlie and the Slumpbuster",
+    "origAirDate":"2012-06-28",
+    "titleLang":"en",
+    "descriptionLang":"en",
+    "entityType":"Episode",
+    "genres":["Sitcom"],
+    "longDescription":"The new Charlie deals with a ghost from his baseball-playing days when an unattractive woman he slept with shows up as a new patient.",
+    "shortDescription":"Charlie deals with a ghost from his baseball days when a woman he slept with shows up as a patient.",
+    "episodeNum":2,
+    "seasonNum":1,
+    "topCast":[ "Charlie Sheen", "Selma Blair", "Shawnee Smith" ],
+    "ratings":[ { "code":"TV14", "body":"USA Parental Rating" } ],
+    "preferredImage":{
+      "width":"240",
+      "height":"360",
+      "uri":"assets/p8981323_b_v5_ae.jpg",
+      "category":"Banner-L1",
+      "text":"yes",
+      "primary":"true",
+      "tier":"Series"
+    }
+  }
+]

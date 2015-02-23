@@ -49,10 +49,12 @@ public class Program {
     private final int releaseYear;
     private final String releaseDate;
     private final String episodeTitle;
+    private final int episodeNum;
+    private final int seasonNum;
     private final List<String> topCast;
     private final List<String> directors;
 
-    public Program(String tmsId, String rootId, String seriesId, String subType, String title, Date origAirDate, String titleLang, String descriptionLang, String entityType, List<String> genres, String longDescription, String shortDescription, int totalEpisodes, String totalSeasons, List<Credit> cast, List<Credit> crew, List<Award> awards, Keywords keywords, List<Rating> ratings, List<Recommendation> recommendations, Image preferredImage, int releaseYear, String releaseDate, String episodeTitle, List<String> topCast, List<String> directors) {
+    public Program(String tmsId, String rootId, String seriesId, String subType, String title, Date origAirDate, String titleLang, String descriptionLang, String entityType, List<String> genres, String longDescription, String shortDescription, int totalEpisodes, String totalSeasons, List<Credit> cast, List<Credit> crew, List<Award> awards, Keywords keywords, List<Rating> ratings, List<Recommendation> recommendations, Image preferredImage, int releaseYear, String releaseDate, String episodeTitle, int episodeNum, int seasonNum, List<String> topCast, List<String> directors) {
         this.tmsId = tmsId;
         this.rootId = rootId;
         this.seriesId = seriesId;
@@ -77,6 +79,8 @@ public class Program {
         this.releaseYear = releaseYear;
         this.releaseDate = releaseDate;
         this.episodeTitle = episodeTitle;
+        this.episodeNum = episodeNum;
+        this.seasonNum = seasonNum;
         this.topCast = topCast;
         this.directors = directors;
     }
@@ -175,6 +179,14 @@ public class Program {
 
     public String getEpisodeTitle() {
         return episodeTitle;
+    }
+
+    public int getEpisodeNum() {
+        return episodeNum;
+    }
+
+    public int getSeasonNum() {
+        return seasonNum;
     }
 
     public List<String> getTopCast() {

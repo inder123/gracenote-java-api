@@ -20,11 +20,14 @@ import static org.junit.Assert.assertTrue;
 
 import java.io.InputStream;
 import java.io.InputStreamReader;
+import java.lang.reflect.Type;
+import java.util.List;
 
 import org.junit.Test;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
+import com.google.gson.reflect.TypeToken;
 import com.singhinderjeet.gracenoteapi.json.GracenoteApiTypeAdapterFactory;
 
 /**
@@ -51,5 +54,13 @@ public class ProgramTest {
     assertEquals("Medical profession", program.getKeywords().getSubject().get(0));
     json = gson.toJson(program);
     assertTrue(json.contains("assets/p185044_b_v5_aa.jpg"));
+
+    Type listType = new TypeToken<List<Program>>() {}.getType();
+    is = ProgramTest.class.getResourceAsStream("/series-episodes.json");
+    List<Program> programs = gson.fromJson(new InputStreamReader(is), listType);
+    program = programs.get(1);
+    assertEquals("Charlie and the Slumpbuster", program.getEpisodeTitle());
+    json = gson.toJson(program);
+    assertTrue(json.contains("Selma Blair"));
   }
 }
