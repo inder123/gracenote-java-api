@@ -54,5 +54,120 @@
       "primary":"true",
       "tier":"Series"
     }
+  },
+  {
+  "tmsId":"SH006883590000",
+  "rootId":"185044",
+  "seriesId":"185044",
+  "subType":"Series",
+  "title":"House",
+  "origAirDate":"2004-11-16",
+  "titleLang":"en",
+  "descriptionLang":"en",
+  "entityType":"Show",
+  "genres":["Drama", "Mystery", "Medical"],
+  "longDescription":"At fictional Princeton Plainsboro Teaching Hospital in New Jersey, prickly genius Dr. Gregory House tackles health mysteries as would a medical Sherlock Holmes, all the while playing mind games with colleagues that include his best friend, oncologist James Wilson. House, an acerbic infectious disease specialist, solves medical puzzles with the help of a team of young diagnosticians. Flawless instincts and unconventional thinking help earn House great respect, despite his brutal honesty and antisocial tendencies.",
+  "shortDescription":"A brilliant and acerbic diagnostician leads a team of specialists.",
+  "totalEpisodes": 178,
+  "totalSeasons":" 8",
+  "cast":[
+    {
+      "billingOrder":"01",
+      "role":"Actor",
+      "nameId":"87269",
+      "personId":"87269",
+      "name":"Hugh Laurie",
+      "characterName":"Dr. Gregory House"
+    },
+    {
+      "billingOrder":"02",
+      "role":"Actor",
+      "nameId":"55541",
+      "personId":"55541",
+      "name":"Robert Sean Leonard",
+      "characterName":"Dr. James Wilson"
+    }
+  ],
+  "crew":[
+    {
+      "billingOrder":"01",
+      "role":"Executive Producer",
+      "nameId":"71245",
+      "personId":"71245",
+      "name":"Paul Attanasio"
+    },
+    {
+      "billingOrder":"02",
+      "role":"Executive Producer",
+      "nameId":"290570",
+      "personId":"286801",
+      "name":"Katie Jacobs"
+    }
+  ],
+  "awards":[
+    {
+      "awardId":"4",
+      "name":"Emmy (Primetime)",
+      "awardName":"Emmy (Primetime)",
+      "won":"true",
+      "year":"2005",
+      "category":"Outstanding Writing for a Drama Series",
+      "awardCatId":"68"
+    },
+    {
+      "awardId":"4",
+      "recipient":"Hugh Laurie",
+      "name":"Emmy (Primetime)",
+      "awardName":"Emmy (Primetime)",
+      "personId":"87269",
+      "year":"2005",
+      "category":"Outstanding Lead Actor in a Drama Series",
+      "awardCatId":"78"
+    },
+    {
+      "awardId":"2",
+      "recipient":"Hugh Laurie",
+      "name":"Golden Globe",
+      "awardName":"Golden Globe",
+      "personId":"87269",
+      "won":"true",
+      "year":"2006",
+      "category":"Best Performance by an Actor in a Television Series - Drama",
+      "awardCatId":"117"
+    }
+  ],
+  "keywords":{
+    "Mood":[ "Fascinating", "Quirky", "Suspenseful" ],
+    "Time Period":[ "2000s" ],
+    "Theme":[ "Mystery" ],
+    "Character":[ "Doctor", "Friend", "Hospital administrator", "Neurologist" ],
+    "Setting":[ "Hospital", "New Jersey" ],
+    "Subject":[ "Medical profession", "Investigation", "Drug addiction", "Unlikely hero", "Misanthropy", "Medical mystery" ]
+  },
+  "ratings":[ { "code":"TVPG", "body":"USA Parental Rating" } ],
+  "recommendations":[
+    {
+      "tmsId":"SH005116510000",
+      "root":"184807",
+      "title":"Monk"
+    },
+    {
+      "tmsId":"SH007322830000",
+      "root":"185019",
+      "title":"Grey's Anatomy"
+    },
+    {
+      "tmsId":"SH011063720000",
+      "root":"191739",
+      "title":"Lie to Me"
+    }
+  ],
+  "preferredImage":{
+    "width":"540", "height":"720",
+    "uri":"assets/p185044_b_v4_aa.jpg",
+    "category":"Banner-L1",
+    "text":"yes", "primary":"true",
+    "tier":"Series"
   }
+}
 ]

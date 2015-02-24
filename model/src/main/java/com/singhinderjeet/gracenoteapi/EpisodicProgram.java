@@ -15,7 +15,6 @@
  */
 package com.singhinderjeet.gracenoteapi;
 
-import com.google.gson.annotations.SerializedName;
 import java.util.Date;
 import java.util.List;
 
@@ -24,95 +23,27 @@ import java.util.List;
  *
  * @author Inderjeet Singh
  */
-public class EpisodicProgram {
+public class EpisodicProgram extends Program {
 
-    private final String tmsId;
-    private final String rootId;
-    private final String seriesId;
-    private final String title;
-    private final String titleLang;
-    @SerializedName("shortdescription")
-    private final String shortDescription;
-    private final String longDescription;
-    private final String descriptionLang;
-    private final String subType;
-    private final List<String> genres;
-    private final Date origAirDate;
-    private final Image preferredImage;
-    private final String episodeTitle;
+    private final int totalEpisodes;
+    private final String totalSeasons;
     private final int seasonNum;
     private final int episodeNum;
-    private final String entityType;
 
-    public EpisodicProgram(String tmsId, String rootId, String seriesId, String title, String titleLang, String shortDescription, String longDescription, String descriptionLang, String subType, List<String> genres, Date origAirDate, Image preferredImage, String episodeTitle, int seasonNum, int episodeNum, String entityType) {
-        this.tmsId = tmsId;
-        this.rootId = rootId;
-        this.seriesId = seriesId;
-        this.title = title;
-        this.titleLang = titleLang;
-        this.shortDescription = shortDescription;
-        this.longDescription = longDescription;
-        this.descriptionLang = descriptionLang;
-        this.subType = subType;
-        this.genres = genres;
-        this.origAirDate = origAirDate;
-        this.preferredImage = preferredImage;
-        this.episodeTitle = episodeTitle;
+    public EpisodicProgram(String tmsId, String rootId, String subType, String title, Date origAirDate, String titleLang, String descriptionLang, String entityType, List<String> genres, String longDescription, String shortDescription, List<Credit> cast, List<Credit> crew, List<Award> awards, Keywords keywords, List<Rating> ratings, List<Recommendation> recommendations, Image preferredImage, String seriesId, String episodeTitle, int releaseYear, String releaseDate, List<String> topCast, List<String> directors, int totalEpisodes, String totalSeasons, int seasonNum, int episodeNum) {
+        super(tmsId, rootId, subType, title, origAirDate, titleLang, descriptionLang, entityType, genres, longDescription, shortDescription, cast, crew, awards, keywords, ratings, recommendations, preferredImage, seriesId, episodeTitle, releaseYear, releaseDate, topCast, directors);
+        this.totalEpisodes = totalEpisodes;
+        this.totalSeasons = totalSeasons;
         this.seasonNum = seasonNum;
         this.episodeNum = episodeNum;
-        this.entityType = entityType;
     }
 
-    public String getTmsId() {
-        return tmsId;
+    public int getTotalEpisodes() {
+        return totalEpisodes;
     }
 
-    public String getRootId() {
-        return rootId;
-    }
-
-    public String getSeriesId() {
-        return seriesId;
-    }
-
-    public String getTitle() {
-        return title;
-    }
-
-    public String getTitleLang() {
-        return titleLang;
-    }
-
-    public String getShortDescription() {
-        return shortDescription;
-    }
-
-    public String getLongDescription() {
-        return longDescription;
-    }
-
-    public String getDescriptionLang() {
-        return descriptionLang;
-    }
-
-    public String getSubType() {
-        return subType;
-    }
-
-    public List<String> getGenres() {
-        return genres;
-    }
-
-    public Date getOrigAirDate() {
-        return origAirDate;
-    }
-
-    public Image getPreferredImage() {
-        return preferredImage;
-    }
-
-    public String getEpisodeTitle() {
-        return episodeTitle;
+    public String getTotalSeasons() {
+        return totalSeasons;
     }
 
     public int getSeasonNum() {
@@ -121,9 +52,5 @@ public class EpisodicProgram {
 
     public int getEpisodeNum() {
         return episodeNum;
-    }
-
-    public String getEntityType() {
-        return entityType;
     }
 }

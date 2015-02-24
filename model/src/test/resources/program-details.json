@@ -1,7 +1,6 @@
 {
   "tmsId":"SH006883590000",
   "rootId":"185044",
-  "seriesId":"185044",
   "subType":"Series",
   "title":"House",
   "origAirDate":"2004-11-16",
@@ -11,8 +10,6 @@
   "genres":["Drama", "Mystery", "Medical"],
   "longDescription":"At fictional Princeton Plainsboro Teaching Hospital in New Jersey, prickly genius Dr. Gregory House tackles health mysteries as would a medical Sherlock Holmes, all the while playing mind games with colleagues that include his best friend, oncologist James Wilson. House, an acerbic infectious disease specialist, solves medical puzzles with the help of a team of young diagnosticians. Flawless instincts and unconventional thinking help earn House great respect, despite his brutal honesty and antisocial tendencies.",
   "shortDescription":"A brilliant and acerbic diagnostician leads a team of specialists.",
-  "totalEpisodes": 178,
-  "totalSeasons":" 8",
   "cast":[
     {
       "billingOrder":"01",

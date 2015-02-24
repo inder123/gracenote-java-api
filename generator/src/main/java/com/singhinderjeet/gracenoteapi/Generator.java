@@ -104,13 +104,12 @@ public class Generator {
       .addMappings(imageMappings)
       .addMappings(keywordMappings);
     processJson("/program-details.json", "Program", programMappings);
-    processJson("/series.json", "Program", programMappings);
-    processJson("/series-episodes.json", "Program", programMappings);
 
     CustomMappings episodicProgramMappings = new CustomMappings()
-      .addMappings(programMappings)
-      .mapFieldName("EpisodicProgram", "shortdescription", "shortDescription");
+      .addMappings(programMappings);
+    processJson("/series.json", "EpisodicProgram", episodicProgramMappings);
     processJson("/episodic-program.json", "EpisodicProgram", episodicProgramMappings);
+    processJson("/series-episodes.json", "EpisodicProgram", episodicProgramMappings);
 
     CustomMappings movieMappings = new CustomMappings()
       .addMappings(programMappings);
@@ -140,6 +139,11 @@ public class Generator {
     ClassDefCollection classes = converter.getClasses();
     classes.setFileCopyrightNotice(fileCopyrightNotice);
     classes.setDefaultClassComment(defaultClassComment);
+    CustomMappings finalMappings = new CustomMappings()
+      .mapSubType("Movie", "Program")
+      .mapSubType("EpisodicProgram", "Program")
+      .mapSubType("SportsEventProgram", "Program");
+    classes.transform(finalMappings);
     classes.generateClasses(outputDir, "    ");
   }
 

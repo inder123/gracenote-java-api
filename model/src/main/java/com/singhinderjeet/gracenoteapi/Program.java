@@ -27,7 +27,6 @@ public class Program {
 
     private final String tmsId;
     private final String rootId;
-    private final String seriesId;
     private final String subType;
     private final String title;
     private final Date origAirDate;
@@ -37,8 +36,6 @@ public class Program {
     private final List<String> genres;
     private final String longDescription;
     private final String shortDescription;
-    private final int totalEpisodes;
-    private final String totalSeasons;
     private final List<Credit> cast;
     private final List<Credit> crew;
     private final List<Award> awards;
@@ -46,18 +43,16 @@ public class Program {
     private final List<Rating> ratings;
     private final List<Recommendation> recommendations;
     private final Image preferredImage;
+    private final String seriesId;
+    private final String episodeTitle;
     private final int releaseYear;
     private final String releaseDate;
-    private final String episodeTitle;
-    private final int episodeNum;
-    private final int seasonNum;
     private final List<String> topCast;
     private final List<String> directors;
 
-    public Program(String tmsId, String rootId, String seriesId, String subType, String title, Date origAirDate, String titleLang, String descriptionLang, String entityType, List<String> genres, String longDescription, String shortDescription, int totalEpisodes, String totalSeasons, List<Credit> cast, List<Credit> crew, List<Award> awards, Keywords keywords, List<Rating> ratings, List<Recommendation> recommendations, Image preferredImage, int releaseYear, String releaseDate, String episodeTitle, int episodeNum, int seasonNum, List<String> topCast, List<String> directors) {
+    public Program(String tmsId, String rootId, String subType, String title, Date origAirDate, String titleLang, String descriptionLang, String entityType, List<String> genres, String longDescription, String shortDescription, List<Credit> cast, List<Credit> crew, List<Award> awards, Keywords keywords, List<Rating> ratings, List<Recommendation> recommendations, Image preferredImage, String seriesId, String episodeTitle, int releaseYear, String releaseDate, List<String> topCast, List<String> directors) {
         this.tmsId = tmsId;
         this.rootId = rootId;
-        this.seriesId = seriesId;
         this.subType = subType;
         this.title = title;
         this.origAirDate = origAirDate;
@@ -67,8 +62,6 @@ public class Program {
         this.genres = genres;
         this.longDescription = longDescription;
         this.shortDescription = shortDescription;
-        this.totalEpisodes = totalEpisodes;
-        this.totalSeasons = totalSeasons;
         this.cast = cast;
         this.crew = crew;
         this.awards = awards;
@@ -76,11 +69,10 @@ public class Program {
         this.ratings = ratings;
         this.recommendations = recommendations;
         this.preferredImage = preferredImage;
+        this.seriesId = seriesId;
+        this.episodeTitle = episodeTitle;
         this.releaseYear = releaseYear;
         this.releaseDate = releaseDate;
-        this.episodeTitle = episodeTitle;
-        this.episodeNum = episodeNum;
-        this.seasonNum = seasonNum;
         this.topCast = topCast;
         this.directors = directors;
     }
@@ -91,10 +83,6 @@ public class Program {
 
     public String getRootId() {
         return rootId;
-    }
-
-    public String getSeriesId() {
-        return seriesId;
     }
 
     public String getSubType() {
@@ -133,14 +121,6 @@ public class Program {
         return shortDescription;
     }
 
-    public int getTotalEpisodes() {
-        return totalEpisodes;
-    }
-
-    public String getTotalSeasons() {
-        return totalSeasons;
-    }
-
     public List<Credit> getCast() {
         return cast;
     }
@@ -169,24 +149,20 @@ public class Program {
         return preferredImage;
     }
 
-    public int getReleaseYear() {
-        return releaseYear;
-    }
-
-    public String getReleaseDate() {
-        return releaseDate;
+    public String getSeriesId() {
+        return seriesId;
     }
 
     public String getEpisodeTitle() {
         return episodeTitle;
     }
 
-    public int getEpisodeNum() {
-        return episodeNum;
+    public int getReleaseYear() {
+        return releaseYear;
     }
 
-    public int getSeasonNum() {
-        return seasonNum;
+    public String getReleaseDate() {
+        return releaseDate;
     }
 
     public List<String> getTopCast() {
