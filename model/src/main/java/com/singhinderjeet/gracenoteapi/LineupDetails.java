@@ -22,36 +22,28 @@ package com.singhinderjeet.gracenoteapi;
  */
 public class LineupDetails {
 
-    private final String type;
-    private final String lineupId;
-    private final String name;
     private final String device;
+    private final String lineupId;
     private final String location;
     private final Mso mso;
+    private final String name;
+    private final String type;
 
-    public LineupDetails(String type, String lineupId, String name, String device, String location, Mso mso) {
-        this.type = type;
-        this.lineupId = lineupId;
-        this.name = name;
+    public LineupDetails(String device, String lineupId, String location, Mso mso, String name, String type) {
         this.device = device;
+        this.lineupId = lineupId;
         this.location = location;
         this.mso = mso;
-    }
-
-    public String getType() {
-        return type;
-    }
-
-    public String getLineupId() {
-        return lineupId;
-    }
-
-    public String getName() {
-        return name;
+        this.name = name;
+        this.type = type;
     }
 
     public String getDevice() {
         return device;
+    }
+
+    public String getLineupId() {
+        return lineupId;
     }
 
     public String getLocation() {
@@ -60,5 +52,13 @@ public class LineupDetails {
 
     public Mso getMso() {
         return mso;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public String getType() {
+        return type;
     }
 }

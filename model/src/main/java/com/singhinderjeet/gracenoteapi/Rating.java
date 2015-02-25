@@ -22,19 +22,19 @@ package com.singhinderjeet.gracenoteapi;
  */
 public class Rating {
 
-    private final String code;
     private final String body;
+    private final String code;
 
-    public Rating(String code, String body) {
-        this.code = code;
+    public Rating(String body, String code) {
         this.body = body;
-    }
-
-    public String getCode() {
-        return code;
+        this.code = code;
     }
 
     public String getBody() {
         return body;
+    }
+
+    public String getCode() {
+        return code;
     }
 }

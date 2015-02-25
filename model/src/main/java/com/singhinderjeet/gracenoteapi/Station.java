@@ -24,36 +24,28 @@ import java.util.List;
  */
 public class Station {
 
-    private final String stationId;
-    private final String callSign;
     private final String affiliateCallSign;
     private final String affiliateId;
-    private final String name;
-    private final String channel;
     private final List<String> bcastLangs;
+    private final String callSign;
+    private final String channel;
     private final List<String> edLangs;
-    private final String type;
+    private final String name;
     private final Image preferredImage;
+    private final String stationId;
+    private final String type;
 
-    public Station(String stationId, String callSign, String affiliateCallSign, String affiliateId, String name, String channel, List<String> bcastLangs, List<String> edLangs, String type, Image preferredImage) {
-        this.stationId = stationId;
-        this.callSign = callSign;
+    public Station(String affiliateCallSign, String affiliateId, List<String> bcastLangs, String callSign, String channel, List<String> edLangs, String name, Image preferredImage, String stationId, String type) {
         this.affiliateCallSign = affiliateCallSign;
         this.affiliateId = affiliateId;
-        this.name = name;
-        this.channel = channel;
         this.bcastLangs = bcastLangs;
+        this.callSign = callSign;
+        this.channel = channel;
         this.edLangs = edLangs;
-        this.type = type;
+        this.name = name;
         this.preferredImage = preferredImage;
-    }
-
-    public String getStationId() {
-        return stationId;
-    }
-
-    public String getCallSign() {
-        return callSign;
+        this.stationId = stationId;
+        this.type = type;
     }
 
     public String getAffiliateCallSign() {
@@ -64,27 +56,35 @@ public class Station {
         return affiliateId;
     }
 
-    public String getName() {
-        return name;
+    public List<String> getBcastLangs() {
+        return bcastLangs;
+    }
+
+    public String getCallSign() {
+        return callSign;
     }
 
     public String getChannel() {
         return channel;
     }
 
-    public List<String> getBcastLangs() {
-        return bcastLangs;
-    }
-
     public List<String> getEdLangs() {
         return edLangs;
     }
 
-    public String getType() {
-        return type;
+    public String getName() {
+        return name;
     }
 
     public Image getPreferredImage() {
         return preferredImage;
+    }
+
+    public String getStationId() {
+        return stationId;
+    }
+
+    public String getType() {
+        return type;
     }
 }

@@ -22,52 +22,48 @@ package com.singhinderjeet.gracenoteapi;
  */
 public class Award {
 
-    private final String awardId;
-    private final String rootId;
-    private final String name;
-    private final String category;
     private final String awardCatId;
-    private final String year;
+    private final String awardId;
+    private final String awardName;
+    private final String category;
+    private final String name;
     private final String personId;
     private final String recipient;
+    private final String rootId;
     private final boolean won;
-    private final String awardName;
+    private final String year;
 
-    public Award(String awardId, String rootId, String name, String category, String awardCatId, String year, String personId, String recipient, boolean won, String awardName) {
-        this.awardId = awardId;
-        this.rootId = rootId;
-        this.name = name;
-        this.category = category;
+    public Award(String awardCatId, String awardId, String awardName, String category, String name, String personId, String recipient, String rootId, boolean won, String year) {
         this.awardCatId = awardCatId;
-        this.year = year;
+        this.awardId = awardId;
+        this.awardName = awardName;
+        this.category = category;
+        this.name = name;
         this.personId = personId;
         this.recipient = recipient;
+        this.rootId = rootId;
         this.won = won;
-        this.awardName = awardName;
-    }
-
-    public String getAwardId() {
-        return awardId;
-    }
-
-    public String getRootId() {
-        return rootId;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public String getCategory() {
-        return category;
+        this.year = year;
     }
 
     public String getAwardCatId() {
         return awardCatId;
     }
 
-    public String getYear() {
-        return year;
+    public String getAwardId() {
+        return awardId;
+    }
+
+    public String getAwardName() {
+        return awardName;
+    }
+
+    public String getCategory() {
+        return category;
+    }
+
+    public String getName() {
+        return name;
     }
 
     public String getPersonId() {
@@ -78,11 +74,15 @@ public class Award {
         return recipient;
     }
 
+    public String getRootId() {
+        return rootId;
+    }
+
     public boolean getWon() {
         return won;
     }
 
-    public String getAwardName() {
-        return awardName;
+    public String getYear() {
+        return year;
     }
 }

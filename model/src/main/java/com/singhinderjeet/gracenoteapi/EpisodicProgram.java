@@ -25,17 +25,25 @@ import java.util.List;
  */
 public class EpisodicProgram extends Program {
 
+    private final int episodeNum;
+    private final int seasonNum;
     private final int totalEpisodes;
     private final String totalSeasons;
-    private final int seasonNum;
-    private final int episodeNum;
 
-    public EpisodicProgram(String tmsId, String rootId, String subType, String title, Date origAirDate, String titleLang, String descriptionLang, String entityType, List<String> genres, String longDescription, String shortDescription, List<Credit> cast, List<Credit> crew, List<Award> awards, Keywords keywords, List<Rating> ratings, List<Recommendation> recommendations, Image preferredImage, String seriesId, String episodeTitle, int releaseYear, String releaseDate, List<String> topCast, List<String> directors, int totalEpisodes, String totalSeasons, int seasonNum, int episodeNum) {
-        super(tmsId, rootId, subType, title, origAirDate, titleLang, descriptionLang, entityType, genres, longDescription, shortDescription, cast, crew, awards, keywords, ratings, recommendations, preferredImage, seriesId, episodeTitle, releaseYear, releaseDate, topCast, directors);
+    public EpisodicProgram(List<Award> awards, List<Credit> cast, List<Credit> crew, String descriptionLang, List<String> directors, String entityType, String episodeTitle, List<String> genres, Keywords keywords, String longDescription, Date origAirDate, Image preferredImage, List<Rating> ratings, List<Recommendation> recommendations, String releaseDate, int releaseYear, String rootId, String seriesId, String shortDescription, String subType, String title, String titleLang, String tmsId, List<String> topCast, int episodeNum, int seasonNum, int totalEpisodes, String totalSeasons) {
+        super(awards, cast, crew, descriptionLang, directors, entityType, episodeTitle, genres, keywords, longDescription, origAirDate, preferredImage, ratings, recommendations, releaseDate, releaseYear, rootId, seriesId, shortDescription, subType, title, titleLang, tmsId, topCast);
+        this.episodeNum = episodeNum;
+        this.seasonNum = seasonNum;
         this.totalEpisodes = totalEpisodes;
         this.totalSeasons = totalSeasons;
-        this.seasonNum = seasonNum;
-        this.episodeNum = episodeNum;
+    }
+
+    public int getEpisodeNum() {
+        return episodeNum;
+    }
+
+    public int getSeasonNum() {
+        return seasonNum;
     }
 
     public int getTotalEpisodes() {
@@ -44,13 +52,5 @@ public class EpisodicProgram extends Program {
 
     public String getTotalSeasons() {
         return totalSeasons;
-    }
-
-    public int getSeasonNum() {
-        return seasonNum;
-    }
-
-    public int getEpisodeNum() {
-        return episodeNum;
     }
 }

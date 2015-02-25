@@ -30,22 +30,22 @@ public class SportsEventProgram extends Program {
     private final String gameTime;
     private final String gameTimeZone;
     private final String organizationId;
+    private final Season season;
     private final String sportsId;
     private final List<Team> teams;
     private final Venue venue;
-    private final Season season;
 
-    public SportsEventProgram(String tmsId, String rootId, String subType, String title, Date origAirDate, String titleLang, String descriptionLang, String entityType, List<String> genres, String longDescription, String shortDescription, List<Credit> cast, List<Credit> crew, List<Award> awards, Keywords keywords, List<Rating> ratings, List<Recommendation> recommendations, Image preferredImage, String seriesId, String episodeTitle, int releaseYear, String releaseDate, List<String> topCast, List<String> directors, String eventTitle, String gameDate, String gameTime, String gameTimeZone, String organizationId, String sportsId, List<Team> teams, Venue venue, Season season) {
-        super(tmsId, rootId, subType, title, origAirDate, titleLang, descriptionLang, entityType, genres, longDescription, shortDescription, cast, crew, awards, keywords, ratings, recommendations, preferredImage, seriesId, episodeTitle, releaseYear, releaseDate, topCast, directors);
+    public SportsEventProgram(List<Award> awards, List<Credit> cast, List<Credit> crew, String descriptionLang, List<String> directors, String entityType, String episodeTitle, List<String> genres, Keywords keywords, String longDescription, Date origAirDate, Image preferredImage, List<Rating> ratings, List<Recommendation> recommendations, String releaseDate, int releaseYear, String rootId, String seriesId, String shortDescription, String subType, String title, String titleLang, String tmsId, List<String> topCast, String eventTitle, String gameDate, String gameTime, String gameTimeZone, String organizationId, Season season, String sportsId, List<Team> teams, Venue venue) {
+        super(awards, cast, crew, descriptionLang, directors, entityType, episodeTitle, genres, keywords, longDescription, origAirDate, preferredImage, ratings, recommendations, releaseDate, releaseYear, rootId, seriesId, shortDescription, subType, title, titleLang, tmsId, topCast);
         this.eventTitle = eventTitle;
         this.gameDate = gameDate;
         this.gameTime = gameTime;
         this.gameTimeZone = gameTimeZone;
         this.organizationId = organizationId;
+        this.season = season;
         this.sportsId = sportsId;
         this.teams = teams;
         this.venue = venue;
-        this.season = season;
     }
 
     public String getEventTitle() {
@@ -68,6 +68,10 @@ public class SportsEventProgram extends Program {
         return organizationId;
     }
 
+    public Season getSeason() {
+        return season;
+    }
+
     public String getSportsId() {
         return sportsId;
     }
@@ -78,9 +82,5 @@ public class SportsEventProgram extends Program {
 
     public Venue getVenue() {
         return venue;
-    }
-
-    public Season getSeason() {
-        return season;
     }
 }

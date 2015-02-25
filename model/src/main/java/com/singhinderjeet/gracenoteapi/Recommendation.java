@@ -22,31 +22,31 @@ package com.singhinderjeet.gracenoteapi;
  */
 public class Recommendation {
 
-    private final String tmsId;
     private final String root;
-    private final String title;
     private final String rootId;
+    private final String title;
+    private final String tmsId;
 
-    public Recommendation(String tmsId, String root, String title, String rootId) {
-        this.tmsId = tmsId;
+    public Recommendation(String root, String rootId, String title, String tmsId) {
         this.root = root;
-        this.title = title;
         this.rootId = rootId;
-    }
-
-    public String getTmsId() {
-        return tmsId;
+        this.title = title;
+        this.tmsId = tmsId;
     }
 
     public String getRoot() {
         return root;
     }
 
+    public String getRootId() {
+        return rootId;
+    }
+
     public String getTitle() {
         return title;
     }
 
-    public String getRootId() {
-        return rootId;
+    public String getTmsId() {
+        return tmsId;
     }
 }

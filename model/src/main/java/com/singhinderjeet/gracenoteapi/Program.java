@@ -25,100 +25,60 @@ import java.util.List;
  */
 public class Program {
 
-    private final String tmsId;
-    private final String rootId;
-    private final String subType;
-    private final String title;
-    private final Date origAirDate;
-    private final String titleLang;
-    private final String descriptionLang;
-    private final String entityType;
-    private final List<String> genres;
-    private final String longDescription;
-    private final String shortDescription;
+    private final List<Award> awards;
     private final List<Credit> cast;
     private final List<Credit> crew;
-    private final List<Award> awards;
+    private final String descriptionLang;
+    private final List<String> directors;
+    private final String entityType;
+    private final String episodeTitle;
+    private final List<String> genres;
     private final Keywords keywords;
+    private final String longDescription;
+    private final Date origAirDate;
+    private final Image preferredImage;
     private final List<Rating> ratings;
     private final List<Recommendation> recommendations;
-    private final Image preferredImage;
-    private final String seriesId;
-    private final String episodeTitle;
-    private final int releaseYear;
     private final String releaseDate;
+    private final int releaseYear;
+    private final String rootId;
+    private final String seriesId;
+    private final String shortDescription;
+    private final String subType;
+    private final String title;
+    private final String titleLang;
+    private final String tmsId;
     private final List<String> topCast;
-    private final List<String> directors;
 
-    public Program(String tmsId, String rootId, String subType, String title, Date origAirDate, String titleLang, String descriptionLang, String entityType, List<String> genres, String longDescription, String shortDescription, List<Credit> cast, List<Credit> crew, List<Award> awards, Keywords keywords, List<Rating> ratings, List<Recommendation> recommendations, Image preferredImage, String seriesId, String episodeTitle, int releaseYear, String releaseDate, List<String> topCast, List<String> directors) {
-        this.tmsId = tmsId;
-        this.rootId = rootId;
-        this.subType = subType;
-        this.title = title;
-        this.origAirDate = origAirDate;
-        this.titleLang = titleLang;
-        this.descriptionLang = descriptionLang;
-        this.entityType = entityType;
-        this.genres = genres;
-        this.longDescription = longDescription;
-        this.shortDescription = shortDescription;
+    public Program(List<Award> awards, List<Credit> cast, List<Credit> crew, String descriptionLang, List<String> directors, String entityType, String episodeTitle, List<String> genres, Keywords keywords, String longDescription, Date origAirDate, Image preferredImage, List<Rating> ratings, List<Recommendation> recommendations, String releaseDate, int releaseYear, String rootId, String seriesId, String shortDescription, String subType, String title, String titleLang, String tmsId, List<String> topCast) {
+        this.awards = awards;
         this.cast = cast;
         this.crew = crew;
-        this.awards = awards;
+        this.descriptionLang = descriptionLang;
+        this.directors = directors;
+        this.entityType = entityType;
+        this.episodeTitle = episodeTitle;
+        this.genres = genres;
         this.keywords = keywords;
+        this.longDescription = longDescription;
+        this.origAirDate = origAirDate;
+        this.preferredImage = preferredImage;
         this.ratings = ratings;
         this.recommendations = recommendations;
-        this.preferredImage = preferredImage;
-        this.seriesId = seriesId;
-        this.episodeTitle = episodeTitle;
-        this.releaseYear = releaseYear;
         this.releaseDate = releaseDate;
+        this.releaseYear = releaseYear;
+        this.rootId = rootId;
+        this.seriesId = seriesId;
+        this.shortDescription = shortDescription;
+        this.subType = subType;
+        this.title = title;
+        this.titleLang = titleLang;
+        this.tmsId = tmsId;
         this.topCast = topCast;
-        this.directors = directors;
     }
 
-    public String getTmsId() {
-        return tmsId;
-    }
-
-    public String getRootId() {
-        return rootId;
-    }
-
-    public String getSubType() {
-        return subType;
-    }
-
-    public String getTitle() {
-        return title;
-    }
-
-    public Date getOrigAirDate() {
-        return origAirDate;
-    }
-
-    public String getTitleLang() {
-        return titleLang;
-    }
-
-    public String getDescriptionLang() {
-        return descriptionLang;
-    }
-
-    public String getEntityType() {
-        return entityType;
-    }
-
-    public List<String> getGenres() {
-        return genres;
-    }
-
-    public String getLongDescription() {
-        return longDescription;
-    }
-
-    public String getShortDescription() {
-        return shortDescription;
+    public List<Award> getAwards() {
+        return awards;
     }
 
     public List<Credit> getCast() {
@@ -129,12 +89,40 @@ public class Program {
         return crew;
     }
 
-    public List<Award> getAwards() {
-        return awards;
+    public String getDescriptionLang() {
+        return descriptionLang;
+    }
+
+    public List<String> getDirectors() {
+        return directors;
+    }
+
+    public String getEntityType() {
+        return entityType;
+    }
+
+    public String getEpisodeTitle() {
+        return episodeTitle;
+    }
+
+    public List<String> getGenres() {
+        return genres;
     }
 
     public Keywords getKeywords() {
         return keywords;
+    }
+
+    public String getLongDescription() {
+        return longDescription;
+    }
+
+    public Date getOrigAirDate() {
+        return origAirDate;
+    }
+
+    public Image getPreferredImage() {
+        return preferredImage;
     }
 
     public List<Rating> getRatings() {
@@ -145,31 +133,43 @@ public class Program {
         return recommendations;
     }
 
-    public Image getPreferredImage() {
-        return preferredImage;
-    }
-
-    public String getSeriesId() {
-        return seriesId;
-    }
-
-    public String getEpisodeTitle() {
-        return episodeTitle;
+    public String getReleaseDate() {
+        return releaseDate;
     }
 
     public int getReleaseYear() {
         return releaseYear;
     }
 
-    public String getReleaseDate() {
-        return releaseDate;
+    public String getRootId() {
+        return rootId;
+    }
+
+    public String getSeriesId() {
+        return seriesId;
+    }
+
+    public String getShortDescription() {
+        return shortDescription;
+    }
+
+    public String getSubType() {
+        return subType;
+    }
+
+    public String getTitle() {
+        return title;
+    }
+
+    public String getTitleLang() {
+        return titleLang;
+    }
+
+    public String getTmsId() {
+        return tmsId;
     }
 
     public List<String> getTopCast() {
         return topCast;
-    }
-
-    public List<String> getDirectors() {
-        return directors;
     }
 }

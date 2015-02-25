@@ -25,42 +25,34 @@ import java.util.List;
  */
 public class Keywords {
 
-    @SerializedName("Mood")
-    private final List<String> mood;
-    @SerializedName("Time Period")
-    private final List<String> timePeriod;
-    @SerializedName("Theme")
-    private final List<String> theme;
     @SerializedName("Character")
     private final List<String> character;
+    @SerializedName("Mood")
+    private final List<String> mood;
     @SerializedName("Setting")
     private final List<String> setting;
     @SerializedName("Subject")
     private final List<String> subject;
+    @SerializedName("Theme")
+    private final List<String> theme;
+    @SerializedName("Time Period")
+    private final List<String> timePeriod;
 
-    public Keywords(List<String> mood, List<String> timePeriod, List<String> theme, List<String> character, List<String> setting, List<String> subject) {
-        this.mood = mood;
-        this.timePeriod = timePeriod;
-        this.theme = theme;
+    public Keywords(List<String> character, List<String> mood, List<String> setting, List<String> subject, List<String> theme, List<String> timePeriod) {
         this.character = character;
+        this.mood = mood;
         this.setting = setting;
         this.subject = subject;
-    }
-
-    public List<String> getMood() {
-        return mood;
-    }
-
-    public List<String> getTimePeriod() {
-        return timePeriod;
-    }
-
-    public List<String> getTheme() {
-        return theme;
+        this.theme = theme;
+        this.timePeriod = timePeriod;
     }
 
     public List<String> getCharacter() {
         return character;
+    }
+
+    public List<String> getMood() {
+        return mood;
     }
 
     public List<String> getSetting() {
@@ -69,5 +61,13 @@ public class Keywords {
 
     public List<String> getSubject() {
         return subject;
+    }
+
+    public List<String> getTheme() {
+        return theme;
+    }
+
+    public List<String> getTimePeriod() {
+        return timePeriod;
     }
 }

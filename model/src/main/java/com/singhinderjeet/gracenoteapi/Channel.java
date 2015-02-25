@@ -22,43 +22,43 @@ package com.singhinderjeet.gracenoteapi;
  */
 public class Channel {
 
-    private final String channel;
-    private final String callSign;
-    private final String stationId;
-    private final String affiliateId;
     private final String affiliateCallSign;
+    private final String affiliateId;
+    private final String callSign;
+    private final String channel;
     private final Image preferredImage;
+    private final String stationId;
 
-    public Channel(String channel, String callSign, String stationId, String affiliateId, String affiliateCallSign, Image preferredImage) {
-        this.channel = channel;
-        this.callSign = callSign;
-        this.stationId = stationId;
-        this.affiliateId = affiliateId;
+    public Channel(String affiliateCallSign, String affiliateId, String callSign, String channel, Image preferredImage, String stationId) {
         this.affiliateCallSign = affiliateCallSign;
+        this.affiliateId = affiliateId;
+        this.callSign = callSign;
+        this.channel = channel;
         this.preferredImage = preferredImage;
-    }
-
-    public String getChannel() {
-        return channel;
-    }
-
-    public String getCallSign() {
-        return callSign;
-    }
-
-    public String getStationId() {
-        return stationId;
-    }
-
-    public String getAffiliateId() {
-        return affiliateId;
+        this.stationId = stationId;
     }
 
     public String getAffiliateCallSign() {
         return affiliateCallSign;
     }
 
+    public String getAffiliateId() {
+        return affiliateId;
+    }
+
+    public String getCallSign() {
+        return callSign;
+    }
+
+    public String getChannel() {
+        return channel;
+    }
+
     public Image getPreferredImage() {
         return preferredImage;
+    }
+
+    public String getStationId() {
+        return stationId;
     }
 }

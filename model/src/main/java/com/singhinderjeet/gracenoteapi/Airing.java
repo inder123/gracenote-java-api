@@ -25,61 +25,61 @@ import java.util.List;
  */
 public class Airing {
 
-    private final Date startTime;
-    private final Date endTime;
-    private final int duration;
-    private final List<String> qualifiers;
     private final List<String> channels;
+    private final int duration;
+    private final Date endTime;
     private final Program program;
-    private final String stationId;
-    private final Station station;
+    private final List<String> qualifiers;
     private final List<Rating> ratings;
+    private final Date startTime;
+    private final Station station;
+    private final String stationId;
 
-    public Airing(Date startTime, Date endTime, int duration, List<String> qualifiers, List<String> channels, Program program, String stationId, Station station, List<Rating> ratings) {
-        this.startTime = startTime;
-        this.endTime = endTime;
-        this.duration = duration;
-        this.qualifiers = qualifiers;
+    public Airing(List<String> channels, int duration, Date endTime, Program program, List<String> qualifiers, List<Rating> ratings, Date startTime, Station station, String stationId) {
         this.channels = channels;
+        this.duration = duration;
+        this.endTime = endTime;
         this.program = program;
-        this.stationId = stationId;
-        this.station = station;
+        this.qualifiers = qualifiers;
         this.ratings = ratings;
-    }
-
-    public Date getStartTime() {
-        return startTime;
-    }
-
-    public Date getEndTime() {
-        return endTime;
-    }
-
-    public int getDuration() {
-        return duration;
-    }
-
-    public List<String> getQualifiers() {
-        return qualifiers;
+        this.startTime = startTime;
+        this.station = station;
+        this.stationId = stationId;
     }
 
     public List<String> getChannels() {
         return channels;
     }
 
+    public int getDuration() {
+        return duration;
+    }
+
+    public Date getEndTime() {
+        return endTime;
+    }
+
     public Program getProgram() {
         return program;
     }
 
-    public String getStationId() {
-        return stationId;
+    public List<String> getQualifiers() {
+        return qualifiers;
+    }
+
+    public List<Rating> getRatings() {
+        return ratings;
+    }
+
+    public Date getStartTime() {
+        return startTime;
     }
 
     public Station getStation() {
         return station;
     }
 
-    public List<Rating> getRatings() {
-        return ratings;
+    public String getStationId() {
+        return stationId;
     }
 }

@@ -22,67 +22,67 @@ package com.singhinderjeet.gracenoteapi;
  */
 public class Image {
 
-    private final String width;
-    private final String height;
-    private final Caption caption;
-    private final String uri;
-    private final String size;
     private final String aspect;
+    private final Caption caption;
     private final String category;
-    private final String text;
+    private final String height;
     private final boolean primary;
+    private final String size;
+    private final String text;
     private final String tier;
+    private final String uri;
+    private final String width;
 
-    public Image(String width, String height, Caption caption, String uri, String size, String aspect, String category, String text, boolean primary, String tier) {
-        this.width = width;
-        this.height = height;
-        this.caption = caption;
-        this.uri = uri;
-        this.size = size;
+    public Image(String aspect, Caption caption, String category, String height, boolean primary, String size, String text, String tier, String uri, String width) {
         this.aspect = aspect;
+        this.caption = caption;
         this.category = category;
-        this.text = text;
+        this.height = height;
         this.primary = primary;
+        this.size = size;
+        this.text = text;
         this.tier = tier;
-    }
-
-    public String getWidth() {
-        return width;
-    }
-
-    public String getHeight() {
-        return height;
-    }
-
-    public Caption getCaption() {
-        return caption;
-    }
-
-    public String getUri() {
-        return uri;
-    }
-
-    public String getSize() {
-        return size;
+        this.uri = uri;
+        this.width = width;
     }
 
     public String getAspect() {
         return aspect;
     }
 
+    public Caption getCaption() {
+        return caption;
+    }
+
     public String getCategory() {
         return category;
     }
 
-    public String getText() {
-        return text;
+    public String getHeight() {
+        return height;
     }
 
     public boolean getPrimary() {
         return primary;
     }
 
+    public String getSize() {
+        return size;
+    }
+
+    public String getText() {
+        return text;
+    }
+
     public String getTier() {
         return tier;
+    }
+
+    public String getUri() {
+        return uri;
+    }
+
+    public String getWidth() {
+        return width;
     }
 }

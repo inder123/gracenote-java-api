@@ -22,52 +22,28 @@ package com.singhinderjeet.gracenoteapi;
  */
 public class Credit {
 
-    private final String personId;
-    private final String nameId;
-    private final String name;
-    private final String rootId;
-    private final String title;
-    private final String role;
     private final String billingOrder;
     private final String characterName;
-    private final String year;
+    private final String name;
+    private final String nameId;
+    private final String personId;
+    private final String role;
+    private final String rootId;
+    private final String title;
     private final String type;
+    private final String year;
 
-    public Credit(String personId, String nameId, String name, String rootId, String title, String role, String billingOrder, String characterName, String year, String type) {
-        this.personId = personId;
-        this.nameId = nameId;
-        this.name = name;
-        this.rootId = rootId;
-        this.title = title;
-        this.role = role;
+    public Credit(String billingOrder, String characterName, String name, String nameId, String personId, String role, String rootId, String title, String type, String year) {
         this.billingOrder = billingOrder;
         this.characterName = characterName;
-        this.year = year;
+        this.name = name;
+        this.nameId = nameId;
+        this.personId = personId;
+        this.role = role;
+        this.rootId = rootId;
+        this.title = title;
         this.type = type;
-    }
-
-    public String getPersonId() {
-        return personId;
-    }
-
-    public String getNameId() {
-        return nameId;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public String getRootId() {
-        return rootId;
-    }
-
-    public String getTitle() {
-        return title;
-    }
-
-    public String getRole() {
-        return role;
+        this.year = year;
     }
 
     public String getBillingOrder() {
@@ -78,11 +54,35 @@ public class Credit {
         return characterName;
     }
 
-    public String getYear() {
-        return year;
+    public String getName() {
+        return name;
+    }
+
+    public String getNameId() {
+        return nameId;
+    }
+
+    public String getPersonId() {
+        return personId;
+    }
+
+    public String getRole() {
+        return role;
+    }
+
+    public String getRootId() {
+        return rootId;
+    }
+
+    public String getTitle() {
+        return title;
     }
 
     public String getType() {
         return type;
+    }
+
+    public String getYear() {
+        return year;
     }
 }

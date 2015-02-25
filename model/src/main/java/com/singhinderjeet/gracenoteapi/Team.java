@@ -22,14 +22,18 @@ package com.singhinderjeet.gracenoteapi;
  */
 public class Team {
 
+    private final boolean isHome;
     private final String name;
     private final String teamBrandId;
-    private final boolean isHome;
 
-    public Team(String name, String teamBrandId, boolean isHome) {
+    public Team(boolean isHome, String name, String teamBrandId) {
+        this.isHome = isHome;
         this.name = name;
         this.teamBrandId = teamBrandId;
-        this.isHome = isHome;
+    }
+
+    public boolean getIsHome() {
+        return isHome;
     }
 
     public String getName() {
@@ -38,9 +42,5 @@ public class Team {
 
     public String getTeamBrandId() {
         return teamBrandId;
-    }
-
-    public boolean getIsHome() {
-        return isHome;
     }
 }
