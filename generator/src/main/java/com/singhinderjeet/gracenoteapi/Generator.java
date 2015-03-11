@@ -94,7 +94,6 @@ public class Generator {
       .mapFieldName("Keywords", "Time Period", "timePeriod");
 
     CustomMappings programMappings = new CustomMappings()
-      .mapType("OrigAirDate", "Date")
       .mapToArrayType("Cast", "Credit")
       .mapToArrayType("Crew", "Credit")
       .mapType("PreferredImage", "Image")

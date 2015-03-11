@@ -15,7 +15,6 @@
  */
 package com.singhinderjeet.gracenoteapi;
 
-import java.util.Date;
 import java.util.List;
 
 /**
@@ -35,7 +34,7 @@ public class Program {
     private final List<String> genres;
     private final Keywords keywords;
     private final String longDescription;
-    private final Date origAirDate;
+    private final String origAirDate;
     private final Image preferredImage;
     private final List<Rating> ratings;
     private final List<Recommendation> recommendations;
@@ -50,7 +49,7 @@ public class Program {
     private final String tmsId;
     private final List<String> topCast;
 
-    public Program(List<Award> awards, List<Credit> cast, List<Credit> crew, String descriptionLang, List<String> directors, String entityType, String episodeTitle, List<String> genres, Keywords keywords, String longDescription, Date origAirDate, Image preferredImage, List<Rating> ratings, List<Recommendation> recommendations, String releaseDate, int releaseYear, String rootId, String seriesId, String shortDescription, String subType, String title, String titleLang, String tmsId, List<String> topCast) {
+    public Program(List<Award> awards, List<Credit> cast, List<Credit> crew, String descriptionLang, List<String> directors, String entityType, String episodeTitle, List<String> genres, Keywords keywords, String longDescription, String origAirDate, Image preferredImage, List<Rating> ratings, List<Recommendation> recommendations, String releaseDate, int releaseYear, String rootId, String seriesId, String shortDescription, String subType, String title, String titleLang, String tmsId, List<String> topCast) {
         this.awards = awards;
         this.cast = cast;
         this.crew = crew;
@@ -117,7 +116,7 @@ public class Program {
         return longDescription;
     }
 
-    public Date getOrigAirDate() {
+    public String getOrigAirDate() {
         return origAirDate;
     }
 

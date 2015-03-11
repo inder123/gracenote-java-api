@@ -15,7 +15,6 @@
  */
 package com.singhinderjeet.gracenoteapi;
 
-import java.util.Date;
 import java.util.List;
 
 /**
@@ -30,7 +29,7 @@ public class Movie extends Program {
     private final QualityRating qualityRating;
     private final String runTime;
 
-    public Movie(List<Award> awards, List<Credit> cast, List<Credit> crew, String descriptionLang, List<String> directors, String entityType, String episodeTitle, List<String> genres, Keywords keywords, String longDescription, Date origAirDate, Image preferredImage, List<Rating> ratings, List<Recommendation> recommendations, String releaseDate, int releaseYear, String rootId, String seriesId, String shortDescription, String subType, String title, String titleLang, String tmsId, List<String> topCast, List<String> advisories, String officialUrl, QualityRating qualityRating, String runTime) {
+    public Movie(List<Award> awards, List<Credit> cast, List<Credit> crew, String descriptionLang, List<String> directors, String entityType, String episodeTitle, List<String> genres, Keywords keywords, String longDescription, String origAirDate, Image preferredImage, List<Rating> ratings, List<Recommendation> recommendations, String releaseDate, int releaseYear, String rootId, String seriesId, String shortDescription, String subType, String title, String titleLang, String tmsId, List<String> topCast, List<String> advisories, String officialUrl, QualityRating qualityRating, String runTime) {
         super(awards, cast, crew, descriptionLang, directors, entityType, episodeTitle, genres, keywords, longDescription, origAirDate, preferredImage, ratings, recommendations, releaseDate, releaseYear, rootId, seriesId, shortDescription, subType, title, titleLang, tmsId, topCast);
         this.advisories = advisories;
         this.officialUrl = officialUrl;
