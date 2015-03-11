@@ -24,6 +24,7 @@ import java.util.List;
  */
 public class EpisodicProgram extends Program {
 
+    private final Image episodeImage;
     private final int episodeNum;
     private final String episodeTitle;
     private final int seasonNum;
@@ -31,14 +32,19 @@ public class EpisodicProgram extends Program {
     private final int totalEpisodes;
     private final String totalSeasons;
 
-    public EpisodicProgram(List<Award> awards, List<Credit> cast, List<Credit> crew, String descriptionLang, String entityType, List<String> genres, Keywords keywords, String longDescription, String origAirDate, Image preferredImage, List<Rating> ratings, List<Recommendation> recommendations, String releaseDate, String rootId, String shortDescription, String subType, String title, String titleLang, String tmsId, List<String> topCast, int episodeNum, String episodeTitle, int seasonNum, String seriesId, int totalEpisodes, String totalSeasons) {
+    public EpisodicProgram(List<Award> awards, List<Credit> cast, List<Credit> crew, String descriptionLang, String entityType, List<String> genres, Keywords keywords, String longDescription, String origAirDate, Image preferredImage, List<Rating> ratings, List<Recommendation> recommendations, String releaseDate, String rootId, String shortDescription, String subType, String title, String titleLang, String tmsId, List<String> topCast, Image episodeImage, int episodeNum, String episodeTitle, int seasonNum, String seriesId, int totalEpisodes, String totalSeasons) {
         super(awards, cast, crew, descriptionLang, entityType, genres, keywords, longDescription, origAirDate, preferredImage, ratings, recommendations, releaseDate, rootId, shortDescription, subType, title, titleLang, tmsId, topCast);
+        this.episodeImage = episodeImage;
         this.episodeNum = episodeNum;
         this.episodeTitle = episodeTitle;
         this.seasonNum = seasonNum;
         this.seriesId = seriesId;
         this.totalEpisodes = totalEpisodes;
         this.totalSeasons = totalSeasons;
+    }
+
+    public Image getEpisodeImage() {
+        return episodeImage;
     }
 
     public int getEpisodeNum() {

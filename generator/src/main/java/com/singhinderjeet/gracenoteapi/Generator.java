@@ -105,6 +105,7 @@ public class Generator {
     processJson("/program-details.json", "Program", programMappings);
 
     CustomMappings episodicProgramMappings = new CustomMappings()
+      .mapType("EpisodeImage", "Image")
       .addMappings(programMappings);
     processJson("/series.json", "Series", episodicProgramMappings);
     processJson("/episodic-program.json", "EpisodicProgram", episodicProgramMappings);
