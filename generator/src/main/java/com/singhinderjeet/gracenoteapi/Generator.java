@@ -106,7 +106,7 @@ public class Generator {
 
     CustomMappings episodicProgramMappings = new CustomMappings()
       .addMappings(programMappings);
-    processJson("/series.json", "EpisodicProgram", episodicProgramMappings);
+    processJson("/series.json", "Series", episodicProgramMappings);
     processJson("/episodic-program.json", "EpisodicProgram", episodicProgramMappings);
     processJson("/series-episodes.json", "EpisodicProgram", episodicProgramMappings);
 
@@ -140,8 +140,14 @@ public class Generator {
     classes.setDefaultClassComment(defaultClassComment);
     CustomMappings finalMappings = new CustomMappings()
       .mapSubType("Movie", "Program")
+      .mapSubType("Series", "Program")
       .mapSubType("EpisodicProgram", "Program")
-      .mapSubType("SportsEventProgram", "Program");
+      .mapSubType("SportsEventProgram", "Program")
+      .moveFieldToSubType("releaseYear", "Program", "Movie")
+      .moveFieldToSubType("seriesId", "Program", "Series")
+      .moveFieldToSubType("totalSeasons", "Program", "Series")
+      .moveFieldToSubType("totalEpisodes", "Program", "Series")
+      .moveFieldToSubType("episodeTitle", "Program", "EpisodicProgram");
     classes.transform(finalMappings);
     classes.generateClasses(outputDir, "    ");
   }

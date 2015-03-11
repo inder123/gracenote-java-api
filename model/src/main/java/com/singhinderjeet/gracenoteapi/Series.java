@@ -18,39 +18,27 @@ package com.singhinderjeet.gracenoteapi;
 import java.util.List;
 
 /**
- * The EpisodicProgram class
+ * The Series class
  *
  * @author Inderjeet Singh
  */
-public class EpisodicProgram extends Program {
+public class Series extends Program {
 
-    private final int episodeNum;
-    private final String episodeTitle;
-    private final int seasonNum;
+    private final int releaseYear;
     private final String seriesId;
     private final int totalEpisodes;
     private final String totalSeasons;
 
-    public EpisodicProgram(List<Award> awards, List<Credit> cast, List<Credit> crew, String descriptionLang, List<String> directors, String entityType, List<String> genres, Keywords keywords, String longDescription, String origAirDate, Image preferredImage, List<Rating> ratings, List<Recommendation> recommendations, String releaseDate, String rootId, String shortDescription, String subType, String title, String titleLang, String tmsId, List<String> topCast, int episodeNum, String episodeTitle, int seasonNum, String seriesId, int totalEpisodes, String totalSeasons) {
+    public Series(List<Award> awards, List<Credit> cast, List<Credit> crew, String descriptionLang, List<String> directors, String entityType, List<String> genres, Keywords keywords, String longDescription, String origAirDate, Image preferredImage, List<Rating> ratings, List<Recommendation> recommendations, String releaseDate, String rootId, String shortDescription, String subType, String title, String titleLang, String tmsId, List<String> topCast, int releaseYear, String seriesId, int totalEpisodes, String totalSeasons) {
         super(awards, cast, crew, descriptionLang, directors, entityType, genres, keywords, longDescription, origAirDate, preferredImage, ratings, recommendations, releaseDate, rootId, shortDescription, subType, title, titleLang, tmsId, topCast);
-        this.episodeNum = episodeNum;
-        this.episodeTitle = episodeTitle;
-        this.seasonNum = seasonNum;
+        this.releaseYear = releaseYear;
         this.seriesId = seriesId;
         this.totalEpisodes = totalEpisodes;
         this.totalSeasons = totalSeasons;
     }
 
-    public int getEpisodeNum() {
-        return episodeNum;
-    }
-
-    public String getEpisodeTitle() {
-        return episodeTitle;
-    }
-
-    public int getSeasonNum() {
-        return seasonNum;
+    public int getReleaseYear() {
+        return releaseYear;
     }
 
     public String getSeriesId() {
