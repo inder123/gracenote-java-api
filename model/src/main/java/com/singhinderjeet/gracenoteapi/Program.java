@@ -28,7 +28,6 @@ public class Program {
     private final List<Credit> cast;
     private final List<Credit> crew;
     private final String descriptionLang;
-    private final List<String> directors;
     private final String entityType;
     private final List<String> genres;
     private final Keywords keywords;
@@ -46,12 +45,11 @@ public class Program {
     private final String tmsId;
     private final List<String> topCast;
 
-    public Program(List<Award> awards, List<Credit> cast, List<Credit> crew, String descriptionLang, List<String> directors, String entityType, List<String> genres, Keywords keywords, String longDescription, String origAirDate, Image preferredImage, List<Rating> ratings, List<Recommendation> recommendations, String releaseDate, String rootId, String shortDescription, String subType, String title, String titleLang, String tmsId, List<String> topCast) {
+    public Program(List<Award> awards, List<Credit> cast, List<Credit> crew, String descriptionLang, String entityType, List<String> genres, Keywords keywords, String longDescription, String origAirDate, Image preferredImage, List<Rating> ratings, List<Recommendation> recommendations, String releaseDate, String rootId, String shortDescription, String subType, String title, String titleLang, String tmsId, List<String> topCast) {
         this.awards = awards;
         this.cast = cast;
         this.crew = crew;
         this.descriptionLang = descriptionLang;
-        this.directors = directors;
         this.entityType = entityType;
         this.genres = genres;
         this.keywords = keywords;
@@ -84,10 +82,6 @@ public class Program {
 
     public String getDescriptionLang() {
         return descriptionLang;
-    }
-
-    public List<String> getDirectors() {
-        return directors;
     }
 
     public String getEntityType() {

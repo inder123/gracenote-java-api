@@ -143,6 +143,7 @@ public class Generator {
       .mapSubType("Series", "Program")
       .mapSubType("EpisodicProgram", "Program")
       .mapSubType("SportsEventProgram", "Program")
+      .moveFieldToSubType("directors", "Program", "Movie")
       .moveFieldToSubType("releaseYear", "Program", "Movie")
       .moveFieldToSubType("seriesId", "Program", "Series")
       .moveFieldToSubType("totalSeasons", "Program", "Series")

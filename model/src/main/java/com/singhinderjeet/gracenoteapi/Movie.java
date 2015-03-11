@@ -25,14 +25,16 @@ import java.util.List;
 public class Movie extends Program {
 
     private final List<String> advisories;
+    private final List<String> directors;
     private final String officialUrl;
     private final QualityRating qualityRating;
     private final int releaseYear;
     private final String runTime;
 
-    public Movie(List<Award> awards, List<Credit> cast, List<Credit> crew, String descriptionLang, List<String> directors, String entityType, List<String> genres, Keywords keywords, String longDescription, String origAirDate, Image preferredImage, List<Rating> ratings, List<Recommendation> recommendations, String releaseDate, String rootId, String shortDescription, String subType, String title, String titleLang, String tmsId, List<String> topCast, List<String> advisories, String officialUrl, QualityRating qualityRating, int releaseYear, String runTime) {
-        super(awards, cast, crew, descriptionLang, directors, entityType, genres, keywords, longDescription, origAirDate, preferredImage, ratings, recommendations, releaseDate, rootId, shortDescription, subType, title, titleLang, tmsId, topCast);
+    public Movie(List<Award> awards, List<Credit> cast, List<Credit> crew, String descriptionLang, String entityType, List<String> genres, Keywords keywords, String longDescription, String origAirDate, Image preferredImage, List<Rating> ratings, List<Recommendation> recommendations, String releaseDate, String rootId, String shortDescription, String subType, String title, String titleLang, String tmsId, List<String> topCast, List<String> advisories, List<String> directors, String officialUrl, QualityRating qualityRating, int releaseYear, String runTime) {
+        super(awards, cast, crew, descriptionLang, entityType, genres, keywords, longDescription, origAirDate, preferredImage, ratings, recommendations, releaseDate, rootId, shortDescription, subType, title, titleLang, tmsId, topCast);
         this.advisories = advisories;
+        this.directors = directors;
         this.officialUrl = officialUrl;
         this.qualityRating = qualityRating;
         this.releaseYear = releaseYear;
@@ -41,6 +43,10 @@ public class Movie extends Program {
 
     public List<String> getAdvisories() {
         return advisories;
+    }
+
+    public List<String> getDirectors() {
+        return directors;
     }
 
     public String getOfficialUrl() {
