@@ -24,6 +24,7 @@ import java.io.Reader;
 
 import com.singhinderjeet.json2java.ClassDefCollection;
 import com.singhinderjeet.json2java.CustomMappings;
+import com.singhinderjeet.json2java.EnumDefinition;
 import com.singhinderjeet.json2java.Json2Java;
 
 /**
@@ -68,11 +69,18 @@ public class Generator {
   }
 
   public void generateClasses() throws Exception {
+    EnumDefinition aspectRatioEnum = new EnumDefinition(pkgName, "AspectRatio")
+      .addEnumValue("TWO_BY_THREE", "2x3")
+      .addEnumValue("THREE_BY_FOUR", "3x4")
+      .addEnumValue("FOUR_BY_THREE", "4x3")
+      .addEnumValue("SIXTEEN_BY_NINE", "16x9");
+    converter.addEnum(aspectRatioEnum);
     processJson("/lineup-details.json", "LineupDetails", null);
     processJson("/lineups-by-postal-code1.json", "LineupDetails", null);
     processJson("/lineups-by-postal-code2.json", "LineupDetails", null);
 
-    CustomMappings imageMappings = new CustomMappings(); // Size and Aspect can be enums
+    CustomMappings imageMappings = new CustomMappings()
+      .mapType("Aspect", "AspectRatio"); // Size and Aspect can be enums
     processJson("/images.json", "Image", imageMappings);
 
     CustomMappings channelMappings = new CustomMappings()

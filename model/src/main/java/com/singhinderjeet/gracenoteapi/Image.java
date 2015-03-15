@@ -22,7 +22,7 @@ package com.singhinderjeet.gracenoteapi;
  */
 public class Image {
 
-    private final String aspect;
+    private final AspectRatio aspect;
     private final Caption caption;
     private final String category;
     private final String height;
@@ -33,7 +33,7 @@ public class Image {
     private final String uri;
     private final String width;
 
-    public Image(String aspect, Caption caption, String category, String height, boolean primary, String size, String text, String tier, String uri, String width) {
+    public Image(AspectRatio aspect, Caption caption, String category, String height, boolean primary, String size, String text, String tier, String uri, String width) {
         this.aspect = aspect;
         this.caption = caption;
         this.category = category;
@@ -46,7 +46,7 @@ public class Image {
         this.width = width;
     }
 
-    public String getAspect() {
+    public AspectRatio getAspect() {
         return aspect;
     }
 

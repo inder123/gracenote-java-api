@@ -41,7 +41,7 @@ public class ImageTest {
   public void testImageJson() throws Exception {
     InputStream is = ImageTest.class.getResourceAsStream("/images.json");
     Image image = gson.fromJson(new InputStreamReader(is), Image.class);
-    assertEquals("2x3", image.getAspect());
+    assertEquals(AspectRatio.TWO_BY_THREE, image.getAspect());
     String json = gson.toJson(image);
     assertTrue(json.contains("Tracers (2014)"));
   }
