@@ -10,6 +10,13 @@
   "subType": "Series",
   "genres": ["Entertainment"],
   "origAirDate": "2012-08-09",
+  "episodeImage": {
+    "uri": "tvbanners/v5/AllPhotos/9085357/p9085357_b_v5_aa.jpg",
+    "height": "360",
+    "width": "240",
+    "primary": "true",
+    "category": "Banner"
+  },
   "preferredImage": {
     "uri": "tvbanners/v5/AllPhotos/9085357/p9085357_b_v5_aa.jpg",
     "height": "360",

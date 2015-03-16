@@ -102,7 +102,6 @@ public class Generator {
       .mapFieldName("Keywords", "Time Period", "timePeriod");
 
     CustomMappings programMappings = new CustomMappings()
-      .mapType("OrigAirDate", "Date")
       .mapToArrayType("Cast", "Credit")
       .mapToArrayType("Crew", "Credit")
       .mapType("PreferredImage", "Image")
@@ -114,8 +113,9 @@ public class Generator {
     processJson("/program-details.json", "Program", programMappings);
 
     CustomMappings episodicProgramMappings = new CustomMappings()
+      .mapType("EpisodeImage", "Image")
       .addMappings(programMappings);
-    processJson("/series.json", "EpisodicProgram", episodicProgramMappings);
+    processJson("/series.json", "Series", episodicProgramMappings);
     processJson("/episodic-program.json", "EpisodicProgram", episodicProgramMappings);
     processJson("/series-episodes.json", "EpisodicProgram", episodicProgramMappings);
 
@@ -149,8 +149,15 @@ public class Generator {
     classes.setDefaultClassComment(defaultClassComment);
     CustomMappings finalMappings = new CustomMappings()
       .mapSubType("Movie", "Program")
+      .mapSubType("Series", "Program")
       .mapSubType("EpisodicProgram", "Program")
-      .mapSubType("SportsEventProgram", "Program");
+      .mapSubType("SportsEventProgram", "Program")
+      .moveFieldToSubType("directors", "Program", "Movie")
+      .moveFieldToSubType("releaseYear", "Program", "Movie")
+      .moveFieldToSubType("seriesId", "Program", "Series")
+      .moveFieldToSubType("totalSeasons", "Program", "Series")
+      .moveFieldToSubType("totalEpisodes", "Program", "Series")
+      .moveFieldToSubType("episodeTitle", "Program", "EpisodicProgram");
     classes.transform(finalMappings);
     classes.generateClasses(outputDir, "    ");
   }

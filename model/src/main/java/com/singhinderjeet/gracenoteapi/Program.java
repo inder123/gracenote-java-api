@@ -15,7 +15,6 @@
  */
 package com.singhinderjeet.gracenoteapi;
 
-import java.util.Date;
 import java.util.List;
 
 /**
@@ -29,20 +28,16 @@ public class Program {
     private final List<Credit> cast;
     private final List<Credit> crew;
     private final String descriptionLang;
-    private final List<String> directors;
     private final String entityType;
-    private final String episodeTitle;
     private final List<String> genres;
     private final Keywords keywords;
     private final String longDescription;
-    private final Date origAirDate;
+    private final String origAirDate;
     private final Image preferredImage;
     private final List<Rating> ratings;
     private final List<Recommendation> recommendations;
     private final String releaseDate;
-    private final int releaseYear;
     private final String rootId;
-    private final String seriesId;
     private final String shortDescription;
     private final String subType;
     private final String title;
@@ -50,14 +45,12 @@ public class Program {
     private final String tmsId;
     private final List<String> topCast;
 
-    public Program(List<Award> awards, List<Credit> cast, List<Credit> crew, String descriptionLang, List<String> directors, String entityType, String episodeTitle, List<String> genres, Keywords keywords, String longDescription, Date origAirDate, Image preferredImage, List<Rating> ratings, List<Recommendation> recommendations, String releaseDate, int releaseYear, String rootId, String seriesId, String shortDescription, String subType, String title, String titleLang, String tmsId, List<String> topCast) {
+    public Program(List<Award> awards, List<Credit> cast, List<Credit> crew, String descriptionLang, String entityType, List<String> genres, Keywords keywords, String longDescription, String origAirDate, Image preferredImage, List<Rating> ratings, List<Recommendation> recommendations, String releaseDate, String rootId, String shortDescription, String subType, String title, String titleLang, String tmsId, List<String> topCast) {
         this.awards = awards;
         this.cast = cast;
         this.crew = crew;
         this.descriptionLang = descriptionLang;
-        this.directors = directors;
         this.entityType = entityType;
-        this.episodeTitle = episodeTitle;
         this.genres = genres;
         this.keywords = keywords;
         this.longDescription = longDescription;
@@ -66,9 +59,7 @@ public class Program {
         this.ratings = ratings;
         this.recommendations = recommendations;
         this.releaseDate = releaseDate;
-        this.releaseYear = releaseYear;
         this.rootId = rootId;
-        this.seriesId = seriesId;
         this.shortDescription = shortDescription;
         this.subType = subType;
         this.title = title;
@@ -93,16 +84,8 @@ public class Program {
         return descriptionLang;
     }
 
-    public List<String> getDirectors() {
-        return directors;
-    }
-
     public String getEntityType() {
         return entityType;
-    }
-
-    public String getEpisodeTitle() {
-        return episodeTitle;
     }
 
     public List<String> getGenres() {
@@ -117,7 +100,7 @@ public class Program {
         return longDescription;
     }
 
-    public Date getOrigAirDate() {
+    public String getOrigAirDate() {
         return origAirDate;
     }
 
@@ -137,16 +120,8 @@ public class Program {
         return releaseDate;
     }
 
-    public int getReleaseYear() {
-        return releaseYear;
-    }
-
     public String getRootId() {
         return rootId;
-    }
-
-    public String getSeriesId() {
-        return seriesId;
     }
 
     public String getShortDescription() {

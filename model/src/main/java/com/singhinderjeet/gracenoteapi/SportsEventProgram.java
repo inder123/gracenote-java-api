@@ -15,7 +15,6 @@
  */
 package com.singhinderjeet.gracenoteapi;
 
-import java.util.Date;
 import java.util.List;
 
 /**
@@ -31,18 +30,20 @@ public class SportsEventProgram extends Program {
     private final String gameTimeZone;
     private final String organizationId;
     private final Season season;
+    private final String seriesId;
     private final String sportsId;
     private final List<Team> teams;
     private final Venue venue;
 
-    public SportsEventProgram(List<Award> awards, List<Credit> cast, List<Credit> crew, String descriptionLang, List<String> directors, String entityType, String episodeTitle, List<String> genres, Keywords keywords, String longDescription, Date origAirDate, Image preferredImage, List<Rating> ratings, List<Recommendation> recommendations, String releaseDate, int releaseYear, String rootId, String seriesId, String shortDescription, String subType, String title, String titleLang, String tmsId, List<String> topCast, String eventTitle, String gameDate, String gameTime, String gameTimeZone, String organizationId, Season season, String sportsId, List<Team> teams, Venue venue) {
-        super(awards, cast, crew, descriptionLang, directors, entityType, episodeTitle, genres, keywords, longDescription, origAirDate, preferredImage, ratings, recommendations, releaseDate, releaseYear, rootId, seriesId, shortDescription, subType, title, titleLang, tmsId, topCast);
+    public SportsEventProgram(List<Award> awards, List<Credit> cast, List<Credit> crew, String descriptionLang, String entityType, List<String> genres, Keywords keywords, String longDescription, String origAirDate, Image preferredImage, List<Rating> ratings, List<Recommendation> recommendations, String releaseDate, String rootId, String shortDescription, String subType, String title, String titleLang, String tmsId, List<String> topCast, String eventTitle, String gameDate, String gameTime, String gameTimeZone, String organizationId, Season season, String seriesId, String sportsId, List<Team> teams, Venue venue) {
+        super(awards, cast, crew, descriptionLang, entityType, genres, keywords, longDescription, origAirDate, preferredImage, ratings, recommendations, releaseDate, rootId, shortDescription, subType, title, titleLang, tmsId, topCast);
         this.eventTitle = eventTitle;
         this.gameDate = gameDate;
         this.gameTime = gameTime;
         this.gameTimeZone = gameTimeZone;
         this.organizationId = organizationId;
         this.season = season;
+        this.seriesId = seriesId;
         this.sportsId = sportsId;
         this.teams = teams;
         this.venue = venue;
@@ -70,6 +71,10 @@ public class SportsEventProgram extends Program {
 
     public Season getSeason() {
         return season;
+    }
+
+    public String getSeriesId() {
+        return seriesId;
     }
 
     public String getSportsId() {
